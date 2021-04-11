@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component';
 import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.component';
+import { PatientComponent } from './patient/patient.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.compon
     AppComponent,
     LogInComponent,
     SingUpDoctorComponent,
-    SingUpPatientComponent
+    SingUpPatientComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule
