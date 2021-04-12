@@ -9,8 +9,8 @@ import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component
 
 const routes: Routes = [
   {path: 'log-in', component: LogInComponent},
-  { path: 'sing-up-patient', component: SingUpPatientComponent  },
-  { path: 'sing-up-doctor', component: SingUpDoctorComponent  },
+  { path: 'sing-up patient', component: SingUpPatientComponent  },
+  { path: 'sing-up doctor', component: SingUpDoctorComponent  },
   { path: 'patient', component: PatientComponent  }
 
 ];
