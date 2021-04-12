@@ -1,28 +1,27 @@
-<div class="container-flud">
-  <div class="container">
-  <form>
-    <div>
-      <label for="Plastname">Last name</label>
-      <input type="text" id="Plastname" #Plastname>
-     </div>
-    <div>
-     <label for="Pfirstname">First name</label>
-     <input type="text" id="Pfirstnams" #Pfirstname>
+<div class="info-form" class="center">
+  <form class="form-inline justify-content-center">
+    <div class="grid">
+      <h5 class="titles"> Enter your information:</h5>
+      <div class="row">
+        <input type="text" class="form-control" id="Plastname" placeholder="Enter Lastname"#Plastname>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control" id="Pfirstnams"placeholder="Enter Firstname" #Pfirstname>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control" id="Pemail" placeholder="Enter email" #Pemail>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control" id="Pusername" placeholder="Enter username" #Pusername>
+      </div>
+      <div class="row">
+        <input type="text" class="form-control" id="Ppass" placeholder="Enter password"#Ppass>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button type="button" class="btn btn-outline-secondary"(click)="WritePatient(Plastname,Pfirstname,Pemail,Pusername,Ppass)">Submit</button>
+        </div>
+      </div>
     </div>
-    <div>
-      <label for="Pemail">Email</label>
-      <input type="text" id="Pemail" #Pemail>
-     </div>
-     <div>
-      <label for="Pusername">username</label>
-      <input type="text" id="Pusername" #Pusername>
-     </div>
-    <div>
-     <label for="Ppass">password</label>
-     <input type="text" id="Ppass" #Ppass>
-    </div>
-    <button (click)="WritePatient(Plastname,Pfirstname,Pemail,Pusername,Ppass)" class="btn btn-primary">Submit</button>
-
   </form>
-  </div>
-  </div>
+</div>

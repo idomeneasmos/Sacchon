@@ -1,22 +1,21 @@
 nav a.active{
-  background-color: white;
   color: black;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-
-
 }
 .mo
 {
-
-  color: black;
-  border: 2px solid green;
+  color:darkcyan;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-
+  text-align: center;
   margin: 5px;
+  font-weight: bold;
+}
+.navbar-brand {
+  color: cadetblue;
 }

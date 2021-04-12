@@ -1,9 +1,25 @@
-.container {
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.row {
+  margin-top: 20px;
+}
+.form-control {
+  text-align: center;
   width: 300px;
-  clear: both;
+}
+.titles {
+  color: cadetblue;
 }
 
-.container input {
-  width: 100%;
-  clear: both;
+button {
+  color: cadetblue;
+  border-color: cadetblue;
+  text-align: center;
+  align-self: center;
 }
