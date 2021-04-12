@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Sacchon": {
+    "Sack1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Sacchon",
+            "outputPath": "dist/Sack1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Sacchon:build"
+            "browserTarget": "Sack1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Sacchon:build:production"
+              "browserTarget": "Sack1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Sacchon:build"
+            "browserTarget": "Sack1:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Sacchon:serve"
+            "devServerTarget": "Sack1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Sacchon:serve:production"
+              "devServerTarget": "Sack1:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Sacchon"
+  "defaultProject": "Sack1"
 }

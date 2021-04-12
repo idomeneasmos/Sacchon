@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SingUpDoctorComponent implements OnInit {
 
   constructor() { }
+  WriteDoctor(Dlastname: HTMLInputElement, Dfirstname: HTMLInputElement, Demail: HTMLInputElement,
+  Dusername: HTMLInputElement, Dpass: HTMLInputElement, speciality: HTMLInputElement, validation: HTMLInputElement ): void
+  {
+    alert('sindethike');
+  }
 
   ngOnInit(): void {
   }

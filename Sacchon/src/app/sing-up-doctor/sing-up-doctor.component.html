@@ -1,1 +1,35 @@
-<p>sing-up-doctor works!</p>
+<div class="container-flud">
+<div class="container">
+<form>
+  <div>
+    <label for="Dlastname">Last name</label>
+    <input type="text" id="Dlastname" #Dlastname>
+   </div>
+  <div>
+   <label for="Dfirstname">First name</label>
+   <input type="text" id="Dfirstname" #Dfirstname>
+  </div>
+  <div>
+    <label for="Demail">Email</label>
+    <input type="text" id="Demail" #Demail>
+   </div>
+   <div>
+    <label for="Dusername">username</label>
+    <input type="text" id="Dusername" #Dusername>
+   </div>
+  <div>
+   <label for="Dpass">password</label>
+   <input type="text" id="Dpass" #Dpass>
+  </div>
+  <div>
+    <label for="speciality">speciality</label>
+    <input type="text" id="specialit" #speciality>
+   </div>
+  <div>
+    <label for="validation">validation</label>
+    <input type="text" id="validation" #validation>
+   </div>
+</form>
+<button (click)="WriteDoctor(Dlastname,Dfirstname,Demail,Dusername,Dpass,speciality,validation)" class="btn btn-primary">Submit</button>
+</div>
+</div>

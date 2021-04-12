@@ -1,1 +1,28 @@
-<p>sing-up-patient works!</p>
+<div class="container-flud">
+  <div class="container">
+  <form>
+    <div>
+      <label for="Plastname">Last name</label>
+      <input type="text" id="Plastname" #Plastname>
+     </div>
+    <div>
+     <label for="Pfirstname">First name</label>
+     <input type="text" id="Pfirstnams" #Pfirstname>
+    </div>
+    <div>
+      <label for="Pemail">Email</label>
+      <input type="text" id="Pemail" #Pemail>
+     </div>
+     <div>
+      <label for="Pusername">username</label>
+      <input type="text" id="Pusername" #Pusername>
+     </div>
+    <div>
+     <label for="Ppass">password</label>
+     <input type="text" id="Ppass" #Ppass>
+    </div>
+    <button (click)="WritePatient(Plastname,Pfirstname,Pemail,Pusername,Ppass)" class="btn btn-primary">Submit</button>
+
+  </form>
+  </div>
+  </div>

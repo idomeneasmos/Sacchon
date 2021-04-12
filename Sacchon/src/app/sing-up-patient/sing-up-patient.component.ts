@@ -9,6 +9,12 @@ export class SingUpPatientComponent implements OnInit {
 
   constructor() { }
 
+  WritePatient(Plastname: HTMLInputElement, Pfirstname: HTMLInputElement , Pemail: HTMLInputElement,
+  nPusername: HTMLInputElement, Ppass: HTMLInputElement): void
+  {
+    alert('sindethike');
+  }
+
   ngOnInit(): void {
   }
 
