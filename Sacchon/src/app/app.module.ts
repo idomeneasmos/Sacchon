@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +17,6 @@ import { ListofmypatientsComponent } from './doctor/listofmypatients/listofmypat
 import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement.component';
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
-
 
 @NgModule({
   declarations: [

@@ -1,27 +1,42 @@
 <div class="info-form" class="center">
-  <form class="form-inline justify-content-center">
-    <div class="grid">
+  <div class="row">
+    <form>
       <h5 class="titles"> Enter your information:</h5>
       <div class="row">
-        <input type="text" class="form-control" id="Plastname" placeholder="Enter Lastname"#Plastname>
+        <div class="col">
+          <input type="text" class="form-control" id="Pfullname" placeholder="Enter Fullname" #Pfullname>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="Pemail" placeholder="Enter email" #Pemail>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="Ppass" placeholder="Enter password" #Ppass>
+        </div>
+        <div class="col">
+          <select class="form-control" id="Pgender" placeholder="Enter gender" #Pgender>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
       </div>
       <div class="row">
-        <input type="text" class="form-control" id="Pfirstnams"placeholder="Enter Firstname" #Pfirstname>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Pemail" placeholder="Enter email" #Pemail>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Pusername" placeholder="Enter username" #Pusername>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Ppass" placeholder="Enter password"#Ppass>
+        <div class="col">
+          <input type="date" class="form-control" id="Pdate" placeholder="Enter dateofbirth" #Pdate>
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" id="Pweight" placeholder="Enter weight (Kg)" #Pweight>
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" id="Pheight" placeholder="Enter height (cm)" #Pheight>
+        </div>
       </div>
       <div class="row">
         <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary"(click)="WritePatient(Plastname,Pfirstname,Pemail,Pusername,Ppass)">Submit</button>
+          <button type="button" class="btn btn-outline-secondary"
+            (click)="WritePatient(Pfullname,Pemail,Ppass,Pgender,Pdate, Pweight, Pheight)">Submit</button>
         </div>
       </div>
-    </div>
-  </form>
+    
+    </form>
+  </div>
 </div>

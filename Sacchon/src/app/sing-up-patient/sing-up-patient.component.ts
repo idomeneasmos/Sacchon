@@ -9,8 +9,8 @@ export class SingUpPatientComponent implements OnInit {
 
   constructor() { }
 
-  WritePatient(Plastname: HTMLInputElement, Pfirstname: HTMLInputElement , Pemail: HTMLInputElement,
-  nPusername: HTMLInputElement, Ppass: HTMLInputElement): void
+  WritePatient(Pfullname: HTMLInputElement, Pemail: HTMLInputElement , Ppass: HTMLInputElement,
+  Pgender: HTMLSelectElement, Pdate: HTMLInputElement, Pweight: HTMLInputElement, Pheight: HTMLInputElement): void
   {
     alert('sindethike');
   }
