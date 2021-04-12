@@ -3,30 +3,21 @@
     <div class="grid">
       <h5 class="titles"> Enter your information:</h5>
       <div class="row">
-        <input type="text" class="form-control" id="Dlastname" placeholder="Enter Lastname" #Dlastname>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Dfirstname" placeholder="Enter Firstname" #Dfirstname>
+        <input type="text" class="form-control" id="Dfullname" placeholder="Enter Fullname" #Dfullname>
       </div>
       <div class="row">
         <input type="text" class="form-control" id="Demail" placeholder="Enter email" #Demail>
       </div>
       <div class="row">
-        <input type="text" class="form-control" id="Dusername" placeholder="Enter validation" #Dusername>
-      </div>
-      <div class="row">
         <input type="text" class="form-control" id="Dpass" placeholder="Enter password" #Dpass>
       </div>
       <div class="row">
-        <input type="text" class="form-control" id="specialit" placeholder="Enter speciality" #speciality>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="validation" placeholder="Enter validation" #validation>
+        <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" #speciality>
       </div>
       <div class="row">
         <div class="col text-center">
           <button type="button" class="btn btn-outline-secondary"
-            (click)="WriteDoctor(Dlastname,Dfirstname,Demail,Dusername,Dpass,speciality,validation)">Submit</button>
+            (click)="WriteDoctor(Dfullname,Demail,Dpass,speciality)">Submit</button>
         </div>
       </div>
     </div>
