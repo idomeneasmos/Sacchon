@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
-   password: string;
-   username: string;
-  constructor() {
+  password: string;
+  username: string;
+  constructor(private router: Router) {
     this.password = 'sup';
     this.username = 'sup';
-   }
+  }
 
-   searchUser(user: HTMLInputElement, pass: HTMLInputElement): void
-   {
-     alert(user.value + ' ,' + pass.value);
-   }
+  searchUser(): void {
+    this.router.navigate(['patient']);
+    //alert('jiojoi');
+  }
   ngOnInit(): void {
   }
 

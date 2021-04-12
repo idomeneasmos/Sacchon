@@ -1,3 +1,4 @@
+import { LogInComponent } from './log-in/log-in.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { ChiefComponent } from './chief/chief.component';
+import { PatientComponent } from './patient/patient.component';
 import { InfodoctorComponent } from './chief/infodoctor/infodoctor.component';
 import { InfopatientComponent } from './chief/infopatient/infopatient.component';
 import { ListofinactivedoctorsComponent } from './chief/listofinactivedoctors/listofinactivedoctors.component';
@@ -17,6 +19,8 @@ import { ListofmypatientsComponent } from './doctor/listofmypatients/listofmypat
 import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement.component';
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
+import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
