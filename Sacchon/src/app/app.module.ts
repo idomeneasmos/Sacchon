@@ -20,7 +20,9 @@ import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
 import { Router } from '@angular/router';
-import { from } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { from } from 'rxjs';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
