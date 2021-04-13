@@ -23,6 +23,8 @@ import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ListofmypatientsComponent,
   AddmeasurementComponent,
   DisplayprofileComponent,
-  ListofmeasurementsComponent
+  ListofmeasurementsComponent,
+  HomeComponent
   ],
   imports: [
     BrowserModule,
