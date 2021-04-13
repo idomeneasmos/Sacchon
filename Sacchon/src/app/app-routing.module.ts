@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { PatientComponent } from './patient/patient.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'log-in', component: LogInComponent},
   { path: 'sing-up patient', component: SingUpPatientComponent  },
   { path: 'sing-up doctor', component: SingUpDoctorComponent  },
-  { path: 'patient', component: PatientComponent  }
+  { path: 'patient', component: PatientComponent  },
+  { path: 'Home',  component: HomeComponent}
 
 ];
 

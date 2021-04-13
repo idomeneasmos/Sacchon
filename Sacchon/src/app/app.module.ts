@@ -21,6 +21,7 @@ import { DisplayprofileComponent } from './patient/displayprofile/displayprofile
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { from } from 'rxjs';
   ListofmypatientsComponent,
   AddmeasurementComponent,
   DisplayprofileComponent,
-  ListofmeasurementsComponent
+  ListofmeasurementsComponent,
+  HomeComponent
   ],
   imports: [
     BrowserModule,
