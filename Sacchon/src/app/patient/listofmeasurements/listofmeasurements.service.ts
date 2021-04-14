@@ -1,4 +1,4 @@
-import { Listofmeasurements } from './Listofmeasurements';
+import { Measurement } from './../../measurement';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -13,11 +13,12 @@ export class ListofmeasurementsService {
 
   private readonly baseUrl='http://localhost:4200'
 
-  getlistofmeasurements(): Observable<Listofmeasurements>{
-    return this.http.get<Listofmeasurements[]>(
-      '${this.baseUrl}/Listofmeasurements'
+  getlistofmeasurements(): Observable<Measurement[]>{
+    return this.http.get<Measurement[]>(
+      `${this.baseUrl}/Listofmeasurements`
     )
 
   }
+
 }
 

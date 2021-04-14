@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'sing-up patient', component: SingUpPatientComponent  },
   { path: 'sing-up doctor', component: SingUpDoctorComponent  },
   { path: 'patient', component: PatientComponent  },
-  { path: 'Listofmeasurements',  component: ListofmeasurementsComponent},  
+  { path: 'listofmeasurements',  component: ListofmeasurementsComponent},  
   { path: 'addmeasurement', component: AddmeasurementComponent  },
   { path: 'Home',  component: HomeComponent},
   { path: 'doctor',  component: DoctorComponent}

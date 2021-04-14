@@ -9,6 +9,4 @@ export interface Patient {
     Height: number,
     DoctorsId: number,
     Active: boolean
-
-
 }
