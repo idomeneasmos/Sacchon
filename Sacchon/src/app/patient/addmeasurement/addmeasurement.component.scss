@@ -7,11 +7,29 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 10px;
+    margin-top: 20px;
   }
   button {
-      margin-bottom: 10px;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: white;
+    background-color:lightsteelblue;
+    text-align: center;
+    align-self: center;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+    outline: none
   }
   .bcolor {
       color:cadetblue;
       font: bold;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  h4 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  #formg {
+      text-align: center;
   }

@@ -1,27 +1,35 @@
-<div class="center"> 
-    <div class = "card">
-        <h4>Add a Measurement</h4>
-    <form>
-        <div class="form-group">
-            <label class = "bcolor">Blood Glucose Level</label>
-            <input type="number" class="form-control" placeholder="Your measurement / mg/dL" formControlName="glucoseLevel"/>
-        </div>
-        <div class="form-group">
-            <label class = "bcolor">Carbohydrates</label>
-            <input type="number" class="form-control" placeholder="Your carb intake / grams" formControlName="carbIntake"/>    
-        </div>
-        <div class="form-group">
-            <label class = "bcolor">Medication</label>
-            <input type="text" class="form-control" placeholder="Your medication" formControlName="meds"/>
-        </div>
-        <div class="form-group">
-            <label class = "bcolor">Measurement date</label>
-            <input type="date" class="form-control" placeholder="Date of measurement" formControlName="meds"/>
-        </div>
-        <button type="submit" class="btn btn-outline-secondary" value="Submit" > Submit </button>
+<div class="row">
+    <div class="col"> </div>
+    <div class="col">
+        <div class="card">
+            <h4>Add Measurement</h4>
+            <form>
+                <div class="form-group" id="formg" style="margin: auto;">
+                    <label class="bcolor">Blood Glucose Level</label>
+                    <input id="formg" type="number" class="form-control" placeholder="mg/dL"
+                        formControlName="glucoseLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="bcolor">Carbohydrates</label>
+                    <input id="formg" type="number" class="form-control" placeholder="grams"
+                        formControlName="carbIntake" />
+                </div>
+                <div class="form-group">
+                    <label class="bcolor">Medication</label>
+                    <input id="formg" type="text" class="form-control" formControlName="meds" />
+                </div>
+                <div class="form-group">
+                    <label class="bcolor">Measurement date</label>
+                    <input id="formg" type="date" class="form-control" placeholder="Date of measurement"
+                        formControlName="meds" />
+                </div>
+                <button type="submit" class="btn btn-outline-secondary" value="Submit"> Submit </button>
 
-    </form>
+            </form>
+        </div>
+    </div>
+    <div class="col"></div>
 </div>
 
-</div>
+
 <router-outlet></router-outlet>

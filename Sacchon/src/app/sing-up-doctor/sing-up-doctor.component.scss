@@ -18,8 +18,15 @@
 }
 
 button {
-  color: cadetblue;
-  border-color: cadetblue;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: white;
+  background-color:lightsteelblue;
   text-align: center;
   align-self: center;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  outline: none
 }
