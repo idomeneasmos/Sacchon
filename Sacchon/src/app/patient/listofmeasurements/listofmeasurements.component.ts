@@ -1,4 +1,6 @@
+import { ListofmeasurementsService } from './listofmeasurements.service';
 import { Component, OnInit } from '@angular/core';
+import { Listofmeasurements } from './Listofmeasurements';
 
 @Component({
   selector: 'app-listofmeasurements',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListofmeasurementsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Listofmeasurements: ListofmeasurementsService) {
+    this.Listofmeasurementss = [];
+   }
+
+  Listofmeasurementss: Listofmeasurements[];
 
   ngOnInit(): void {
+  }
+
+  getListofmeasurementss(){
+    this.Listofmeasurementss = [];
+    this.Listofmeasurementss.getlistofmeasurements().subscribe(data =>{
+      this.Listofmeasurementss = data;
+      console.log(this.Listofmeasurementss);
+    });
   }
 
 }
