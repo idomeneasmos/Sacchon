@@ -7,18 +7,17 @@ nav a.active{
 }
 .mo
 {
-
+  font-size: inherit;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
   color:darkcyan;
   padding: 10px 20px;
   text-align:center;
   text-decoration: none;
   display: inline-block;
   text-align: center;
-
   margin: 5px;
   font-weight: bold;
 }
 .navbar-brand {
-
   color: cadetblue;
 }

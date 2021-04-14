@@ -21,6 +21,9 @@ import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
 import { Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 
@@ -47,6 +50,9 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

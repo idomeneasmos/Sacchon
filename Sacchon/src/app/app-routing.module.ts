@@ -1,8 +1,11 @@
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
+import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement.component';
 import { HomeComponent } from './home/home.component';
 import { PatientComponent } from './patient/patient.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.component';
+import { DoctorComponent } from './doctor/doctor.component';
+
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,11 +16,10 @@ const routes: Routes = [
   { path: 'sing-up patient', component: SingUpPatientComponent  },
   { path: 'sing-up doctor', component: SingUpDoctorComponent  },
   { path: 'patient', component: PatientComponent  },
+  { path: 'Listofmeasurements',  component: ListofmeasurementsComponent},  
+  { path: 'addmeasurement', component: AddmeasurementComponent  },
   { path: 'Home',  component: HomeComponent},
-  { path: 'Listofmeasurements',  component: ListofmeasurementsComponent}
-
-
-  
+  { path: 'doctor',  component: DoctorComponent}
 
 ];
 
@@ -26,7 +28,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 
-
 })
 export class AppRoutingModule { }
-export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent];
+export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent];

@@ -6,8 +6,13 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+h5 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
 .row {
   margin-top: 40px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .form-control {
   text-align: center;
@@ -18,8 +23,15 @@
 }
 
 button {
-  color: cadetblue;
-  border-color: cadetblue;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: white;
+  background-color:lightsteelblue;
   text-align: center;
   align-self: center;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  outline: none
 }
