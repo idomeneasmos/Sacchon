@@ -42,5 +42,11 @@ h5, h6, h7 {
 
 #listsContainer1, #listsContainer2{
     height: 200px;
+    overflow:hidden
+}
+#listsContainer1:hover,  #listsContainer2:hover {
     overflow-y:auto;
 }
+#labelinfo1, #labelinfo2 {
+    color: cadetblue;
+  }
