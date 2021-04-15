@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  form:FormGroup;
+  form!:FormGroup;
   constructor(private fb:FormBuilder) {
   }
 
