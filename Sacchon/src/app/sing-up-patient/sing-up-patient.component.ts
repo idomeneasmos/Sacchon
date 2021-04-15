@@ -1,4 +1,9 @@
+import { Patient } from './../patient';
+import { from } from 'rxjs';
+import { SingUpPatientService } from './sing-up-patient.service';
+import { SingUpDoctorComponent } from './../sing-up-doctor/sing-up-doctor.component';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sing-up-patient',
@@ -7,15 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingUpPatientComponent implements OnInit {
 
-  constructor() { }
+  form!: FormGroup;
+  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService) { }
 
-  WritePatient(Pfullname: HTMLInputElement, Pemail: HTMLInputElement , Ppass: HTMLInputElement,
-  Pgender: HTMLSelectElement, Pdate: HTMLInputElement, Pweight: HTMLInputElement, Pheight: HTMLInputElement): void
-  {
-    alert('sindethike');
-  }
+
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      Fullname: ["",],
+      Email: ["",],
+      Password: ["",],
+      Gender: ["",],
+      DateOfBirth: ["",],
+      Weight: ["",],
+      Height: ["",],
+    })
   }
+  onClickSubmit(){
+    let patient:Patient = this.form.value;
+    this.SignupService.addpatient(patient).subscribe( data =>{
+        console.log(data);
+        alert(data);
+      }
+    )
 
+  }
 }

@@ -1,1 +1,18 @@
 <p>listofmeasurements works!</p>
+
+<div class="row">
+    <div *ngFor="let measurement of Listofmeasurementss">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Patients
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{measurement.Id}}</li>
+            </ul>
+          </div>
+
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>

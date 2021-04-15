@@ -2,6 +2,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -52,6 +53,7 @@ import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
     ReactiveFormsModule
