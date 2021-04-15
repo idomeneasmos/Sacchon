@@ -23,8 +23,7 @@ import { ListofmeasurementsComponent } from './patient/listofmeasurements/listof
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
-import { from } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -52,6 +51,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

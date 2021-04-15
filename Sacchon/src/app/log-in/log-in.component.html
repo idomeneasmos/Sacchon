@@ -1,16 +1,18 @@
 <div class="info-form" class="center">
-  <form class="form-inline justify-content-center">
+  <form class="form-inline justify-content-center" [formGroup]="form" onsubmit="">
     <div class="grid">
       <h5 class="titles"> Enter your credentials:</h5>
       <div class="row">
+        <div class="form-group mr-2">
         <input type="text" class="form-control" id="username" placeholder="Enter email" #user>
-      </div>
+      </div></div>
       <div class="row">
+        <div class="form-group mr-2">
         <input type="text" class="form-control" id="pass" placeholder="Enter password" #pass>
-      </div>
+      </div></div>
       <div class="row">
         <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary" (click)="searchUser()">Submit</button>
+          <button type="button" class="btn btn-outline-secondary">Submit</button>
         </div>
       </div>
     </div>

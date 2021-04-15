@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,18 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent implements OnInit {
-  password: string;
-  username: string;
-  constructor(private router: Router) {
-    this.password = 'sup';
-    this.username = 'sup';
+
+  form:FormGroup;
+  constructor(private fb:FormBuilder) {
   }
 
-  searchUser(): void {
-    this.router.navigate(['patient']);
-    //alert('jiojoi');
-  }
   ngOnInit(): void {
+    this.form = this.fb.group({
+      username: ["", Validators.required],
+      password: ["", Validators.required]
+
+    })
+
+  }
+
+  logIn(){
+    let username:string;
+    let password:string;
+    
   }
 
 }
