@@ -25,6 +25,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
+import { AddConsultationComponent } from './doctor/add-consultation/add-consultation.component';
+import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { HomeComponent } from './home/home.component';
   AddmeasurementComponent,
   DisplayprofileComponent,
   ListofmeasurementsComponent,
-  HomeComponent
+  HomeComponent,
+  AddConsultationComponent,
+  MyPatientComponent
   ],
   imports: [
     BrowserModule,

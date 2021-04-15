@@ -32,7 +32,7 @@
             <div class="row">
                 <div id="listsContainer1" class="col">
                     <div class="list-group">
-                        <button type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
+                        <button (click)="selectPatient()" type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
                         <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
                         <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
                         <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
@@ -61,3 +61,5 @@
             </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>

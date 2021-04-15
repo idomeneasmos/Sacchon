@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component';
+import { AddConsultationComponent } from './doctor/add-consultation/add-consultation.component';
 
 const routes: Routes = [
   {path: 'log-in', component: LogInComponent},
@@ -17,8 +18,9 @@ const routes: Routes = [
   { path: 'patient', component: PatientComponent  },
   { path: 'addmeasurement', component: AddmeasurementComponent  },
   { path: 'Home',  component: HomeComponent},
-  { path: 'doctor',  component: DoctorComponent}
-
+  { path: 'doctor',  component: DoctorComponent},
+  { path: 'add-consultation',  component: AddConsultationComponent}
+  
 ];
 
 @NgModule({
@@ -28,4 +30,4 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule { }
-export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent];
+export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent, AddConsultationComponent];
