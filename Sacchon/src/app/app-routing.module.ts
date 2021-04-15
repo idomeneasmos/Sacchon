@@ -5,11 +5,10 @@ import { PatientComponent } from './patient/patient.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
-
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component';
+import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 
 const routes: Routes = [
   {path: 'log-in', component: LogInComponent},
@@ -19,7 +18,8 @@ const routes: Routes = [
   { path: 'listofmeasurements',  component: ListofmeasurementsComponent},  
   { path: 'addmeasurement', component: AddmeasurementComponent  },
   { path: 'Home',  component: HomeComponent},
-  { path: 'doctor',  component: DoctorComponent}
+  { path: 'doctor',  component: DoctorComponent},
+  { path: 'displayprofile', component: DisplayprofileComponent }
 
 ];
 

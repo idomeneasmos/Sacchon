@@ -1,20 +1,20 @@
-import { Patient } from '../patient';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Patient } from 'src/app/patient';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PatientService {
+export class DisplayprofileService {
 
   constructor(private http:HttpClient) {}
 
     private readonly baseURL= 'http://localhost:4200'
 
-    getpatient():Observable<Patient[]>{
-      return this.http.get<Patient[]>(
-        '${this.baseURL}/patient'
+    getprofile():Observable<Patient>{
+      return this.http.get<Patient>(
+        `${this.baseURL}/patient`
 
       )
 
