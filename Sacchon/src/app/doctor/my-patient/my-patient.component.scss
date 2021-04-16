@@ -1,0 +1,30 @@
+.row {
+    margin-top: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: cadetblue;
+  } 
+
+#consultbtn {
+  text-align: center;
+}
+ button {
+  text-align: center;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: white;
+  background-color:cadetblue;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 15px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  outline: none
+ }
+ 
+ igx-card {
+    max-width: 400px;
+    margin: 20px;
+}

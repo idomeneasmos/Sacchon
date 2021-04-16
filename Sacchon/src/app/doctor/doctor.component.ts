@@ -17,5 +17,8 @@ export class DoctorComponent implements OnInit {
   selectPatient(): void {
     this.router.navigate(['add-consultation']);
   }
+  selectMyPatient(): void {
+    this.router.navigate(['my-patient']);
+  }
 
 }

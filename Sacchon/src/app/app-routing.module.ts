@@ -1,3 +1,6 @@
+import { ChiefComponent } from './chief/chief.component';
+import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
+import { NewconsultationComponent } from './doctor/add-consultation/newconsultation/newconsultation.component';
 import { ListofmeasurementsComponent } from './patient/listofmeasurements/listofmeasurements.component';
 import { AddmeasurementComponent } from './patient/addmeasurement/addmeasurement.component';
 import { HomeComponent } from './home/home.component';
@@ -21,8 +24,10 @@ const routes: Routes = [
   { path: 'Home',  component: HomeComponent},
   { path: 'doctor',  component: DoctorComponent},
   { path: 'add-consultation',  component: AddConsultationComponent},
-  
-  { path: 'displayprofile', component: DisplayprofileComponent }
+  { path: 'displayprofile', component: DisplayprofileComponent },
+  { path: 'newconsultation', component: NewconsultationComponent },
+  { path: 'my-patient', component: MyPatientComponent },
+  { path: 'chiefDoctor', component: ChiefComponent }
 
 ];
 
@@ -33,4 +38,4 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule { }
-export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent, AddConsultationComponent];
+export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent, AddConsultationComponent, NewconsultationComponent, MyPatientComponent];

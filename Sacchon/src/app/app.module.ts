@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { ChiefComponent } from './chief/chief.component';
@@ -23,10 +22,16 @@ import { ListofmeasurementsComponent } from './patient/listofmeasurements/listof
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import { AddConsultationComponent } from './doctor/add-consultation/add-consultation.component';
 import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
+import { ChartsModule } from 'ng2-charts';
+import { NewconsultationComponent } from './doctor/add-consultation/newconsultation/newconsultation.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { MonthpickerComponent } from './doctor/my-patient/monthpicker/monthpicker.component';
+import { NgMonthPickerModule } from 'ng-month-picker';
+
 
 @NgModule({
   declarations: [
@@ -47,14 +52,21 @@ import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
   ListofmeasurementsComponent,
   HomeComponent,
   AddConsultationComponent,
-  MyPatientComponent
+  MyPatientComponent,
+  NewconsultationComponent,
+  MonthpickerComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule,
+    MatButtonModule,
+    MatIconModule,
+    NgMonthPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
