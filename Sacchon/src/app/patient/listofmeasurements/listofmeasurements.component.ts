@@ -1,15 +1,30 @@
+import { ListofmeasurementsService } from './listofmeasurements.service';
 import { Component, OnInit } from '@angular/core';
+import { Measurement } from 'src/app/measurement';
 
 @Component({
   selector: 'app-listofmeasurements',
   templateUrl: './listofmeasurements.component.html',
   styleUrls: ['./listofmeasurements.component.scss']
 })
+
 export class ListofmeasurementsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Listofmeasurements: ListofmeasurementsService) {
+    this.Listofmeasurementss = [];
+   }
+
+  Listofmeasurementss: Measurement[];
 
   ngOnInit(): void {
+  }
+
+  getListofmeasurementss(){
+    this.Listofmeasurementss = [];
+    this.Listofmeasurements.getlistofmeasurements().subscribe(data =>{
+      this.Listofmeasurementss = data;
+      console.log(this.Listofmeasurementss);
+    });
   }
 
 }

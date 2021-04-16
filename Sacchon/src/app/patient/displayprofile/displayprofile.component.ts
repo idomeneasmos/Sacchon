@@ -1,3 +1,5 @@
+import { Patient } from './../../patient';
+import { DisplayprofileService } from './displayprofile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ProfileService: DisplayprofileService) {
+    this.Profile = {} as Patient;
+  }
+
+   Profile: Patient;
 
   ngOnInit(): void {
+  }
+
+  getProfile(){
+    this.ProfileService.getprofile().subscribe(data =>{
+      this.Profile = data;
+      console.log(this.Profile);
+    });
+
   }
 
 }

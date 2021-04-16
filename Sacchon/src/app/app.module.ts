@@ -2,6 +2,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -24,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
+import { AddConsultationComponent } from './doctor/add-consultation/add-consultation.component';
+import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +45,14 @@ import { HomeComponent } from './home/home.component';
   AddmeasurementComponent,
   DisplayprofileComponent,
   ListofmeasurementsComponent,
-  HomeComponent
+  HomeComponent,
+  AddConsultationComponent,
+  MyPatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],

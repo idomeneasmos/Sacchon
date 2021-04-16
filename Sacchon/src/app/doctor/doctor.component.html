@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
-    <h3 class="titledoc"> <img src="https://www.alliedps.com/blog/wp-content/uploads/2018/07/download.jpg" width="80px" height="100px"> What's up Doc</h3>
+    <h3 style="margin-top: 5px;" class="titledoc">What's up Doc</h3>
     <div class="row">
         <div class="col-2">
             <div>
@@ -22,9 +22,17 @@
         </div>
         <div class="col-8">
             <div class="row">
+                <div class="col">
+                    <h5 id="labelinfo1" style="text-align: center;">Patients waiting for consultation</h5>
+                </div>
+                <div class="col">
+                    <h5 id="labelinfo2"style="text-align: center;">My Patients</h5>
+                </div>
+            </div>
+            <div class="row">
                 <div id="listsContainer1" class="col">
                     <div class="list-group">
-                        <button type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
+                        <button (click)="selectPatient()" type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
                         <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
                         <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
                         <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
@@ -53,3 +61,5 @@
             </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>
