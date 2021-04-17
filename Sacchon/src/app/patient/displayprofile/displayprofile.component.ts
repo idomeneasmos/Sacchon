@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Patient } from './../../patient';
 import { DisplayprofileService } from './displayprofile.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayprofileComponent implements OnInit {
 
-  constructor(private ProfileService: DisplayprofileService) {
+  constructor(private router: Router, private ProfileService: DisplayprofileService) {
     this.Profile = {} as Patient;
   }
 
@@ -23,7 +24,13 @@ export class DisplayprofileComponent implements OnInit {
       this.Profile = data;
       console.log(this.Profile);
     });
-
   }
 
+  edit(){
+    this.router.navigate(['editAccount']);
+  }
+
+  delete(){
+    this.router.navigate(['deleteAccount']);
+  }
 }

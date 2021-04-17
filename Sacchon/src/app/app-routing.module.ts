@@ -1,3 +1,10 @@
+import { DeletedoctoraccountComponent } from './doctor/deletedoctoraccount/deletedoctoraccount.component';
+import { EditdoctoraccountComponent } from './doctor/editdoctoraccount/editdoctoraccount.component';
+import { DisplayDoctorProfileComponent } from './doctor/display-doctor-profile/display-doctor-profile.component';
+import { DeleteaccountComponent } from './patient/deleteaccount/deleteaccount.component';
+import { EditaccountComponent } from './patient/editaccount/editaccount.component';
+import { ListofallpatientsComponent } from './chief/listofallpatients/listofallpatients.component';
+import { ListofalldoctorsComponent } from './chief/listofalldoctors/listofalldoctors.component';
 import { ChiefComponent } from './chief/chief.component';
 import { MyPatientComponent } from './doctor/my-patient/my-patient.component';
 import { NewconsultationComponent } from './doctor/add-consultation/newconsultation/newconsultation.component';
@@ -13,6 +20,7 @@ import { NgModule } from '@angular/core';
 import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component';
 import { AddConsultationComponent } from './doctor/add-consultation/add-consultation.component';
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
+import { DoctorprofileComponent } from './chief/doctorprofile/doctorprofile.component';
 
 const routes: Routes = [
   {path: 'log-in', component: LogInComponent},
@@ -27,8 +35,13 @@ const routes: Routes = [
   { path: 'displayprofile', component: DisplayprofileComponent },
   { path: 'newconsultation', component: NewconsultationComponent },
   { path: 'my-patient', component: MyPatientComponent },
-  { path: 'chiefDoctor', component: ChiefComponent }
-
+  { path: 'chiefDoctor', component: ChiefComponent },
+  { path: 'doctorProfile', component: DoctorprofileComponent},
+  { path: 'editAccount', component: EditaccountComponent},
+  { path: 'deleteAccount', component: DeleteaccountComponent},
+  { path: 'displaydoctorprofile', component: DisplayDoctorProfileComponent},
+  { path: 'editdoctoraccount', component: EditdoctoraccountComponent},
+  { path: 'deletedoctoraccount', component: DeletedoctoraccountComponent}
 ];
 
 @NgModule({
@@ -38,4 +51,8 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule { }
-export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent, AddConsultationComponent, NewconsultationComponent, MyPatientComponent];
+export const routingComponents = [SingUpPatientComponent, LogInComponent, 
+  PatientComponent, AddmeasurementComponent, DoctorComponent, AddConsultationComponent, 
+  NewconsultationComponent, MyPatientComponent, ListofalldoctorsComponent, 
+  ListofallpatientsComponent, DoctorprofileComponent, EditaccountComponent, DeleteaccountComponent,
+  DisplayDoctorProfileComponent, EditdoctoraccountComponent, DeletedoctoraccountComponent];

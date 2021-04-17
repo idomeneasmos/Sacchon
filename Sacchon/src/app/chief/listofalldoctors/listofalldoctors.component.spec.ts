@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteaccountComponent } from './deleteaccount.component';
+import { ListofalldoctorsComponent } from './listofalldoctors.component';
 
-describe('DeleteaccountComponent', () => {
-  let component: DeleteaccountComponent;
-  let fixture: ComponentFixture<DeleteaccountComponent>;
+describe('ListofalldoctorsComponent', () => {
+  let component: ListofalldoctorsComponent;
+  let fixture: ComponentFixture<ListofalldoctorsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteaccountComponent ]
+      declarations: [ ListofalldoctorsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteaccountComponent);
+    fixture = TestBed.createComponent(ListofalldoctorsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
