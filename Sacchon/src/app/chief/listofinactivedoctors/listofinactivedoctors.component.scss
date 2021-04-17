@@ -1,0 +1,32 @@
+#listsContainer1, #listsContainer2{
+    height: 250px;
+    overflow:hidden
+}
+#listsContainer1:hover,  #listsContainer2:hover {
+    overflow-y:auto;
+}
+#labelinfo1, #labelinfo2 {
+    color: cadetblue;
+  }
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: white;
+    background-color:lightsteelblue;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+    outline: none
+  }
+.row {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+button:hover, a:hover {
+    opacity: 0.7;
+  }

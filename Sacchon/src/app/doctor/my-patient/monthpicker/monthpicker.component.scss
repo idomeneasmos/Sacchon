@@ -1,0 +1,21 @@
+button {
+    text-align: center;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: white;
+    background-color:lightgrey;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+    outline: none
+   }
+
+.outerdiv{
+    margin: 30px;
+    padding: 20px;
+}
