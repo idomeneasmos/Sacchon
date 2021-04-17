@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container"> 
+    <div class="row">
+        <h2>
+            Patient's Measurement
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <p>Daily Blood Glucose Level</p>
+            <div>
+                <canvas baseChart
+                    [datasets]="lineChartData" 
+                    [labels]="lineChartLabels" 
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors" 
+                    [legend]="lineChartLegend" 
+                    [chartType] ="lineChartType"
+                    [plugins]="lineChartPlugins">
+                </canvas>
+            </div>
+        </div>
+        <div class="col-6">
+            <p>Daily Carbohydrates</p>
+            <div>
+                <canvas baseChart
+                    [datasets]="lineChartData2" 
+                    [labels]="lineChartLabels2" 
+                    [options]="lineChartOptions2"
+                    [colors]="lineChartColors2" 
+                    [legend]="lineChartLegend2" 
+                    [chartType] ="lineChartType2"
+                    [plugins]="lineChartPlugins2">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="app-monthpicker"><app-monthpicker></app-monthpicker></div>
+</div>
+<router-outlet> </router-outlet>

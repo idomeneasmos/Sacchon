@@ -1,0 +1,25 @@
+<div class="info-form" class="center">
+    <form class="form-inline justify-content-center">
+      <div class="grid">
+        <h5 class="titles"> Edit your information:</h5>
+        <div class="row">
+          <input type="text" class="form-control" id="Dfullname" placeholder="Enter Fullname" #Dfullname>
+        </div>
+        <div class="row">
+          <input type="text" class="form-control" id="Demail" placeholder="Enter email" #Demail>
+        </div>
+        <div class="row">
+          <input type="text" class="form-control" id="Dpass" placeholder="Enter password" #Dpass>
+        </div>
+        <div class="row">
+          <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" #speciality>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <button type="button" class="btn btn-outline-secondary"
+            (click)="EditDoctor(Dfullname,Demail,Dpass,speciality)">Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

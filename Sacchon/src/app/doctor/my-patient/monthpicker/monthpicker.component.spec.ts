@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfodoctorComponent } from './infodoctor.component';
+import { MonthpickerComponent } from './monthpicker.component';
 
-describe('InfodoctorComponent', () => {
-  let component: InfodoctorComponent;
-  let fixture: ComponentFixture<InfodoctorComponent>;
+describe('MonthpickerComponent', () => {
+  let component: MonthpickerComponent;
+  let fixture: ComponentFixture<MonthpickerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfodoctorComponent ]
+      declarations: [ MonthpickerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfodoctorComponent);
+    fixture = TestBed.createComponent(MonthpickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
