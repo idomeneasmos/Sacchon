@@ -12,4 +12,8 @@ export class EditaccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  save() {
+    
+  }
+
 }

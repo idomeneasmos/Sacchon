@@ -11,7 +11,7 @@ export class SingUpDoctorComponent implements OnInit {
   WriteDoctor(Dfullname: HTMLInputElement, Demail: HTMLInputElement, Dpass: HTMLInputElement,
   speciality: HTMLInputElement): void
   {
-    alert('sindethike');
+    alert('...');
   }
 
   ngOnInit(): void {

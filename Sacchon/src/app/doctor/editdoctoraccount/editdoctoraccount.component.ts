@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class EditdoctoraccountComponent implements OnInit {
 
   constructor() { }
+  EditDoctor(Dfullname: HTMLInputElement, Demail: HTMLInputElement, Dpass: HTMLInputElement,
+    speciality: HTMLInputElement): void
+    {
+      alert('Your changes saved');
+    }
 
   ngOnInit(): void {
   }
