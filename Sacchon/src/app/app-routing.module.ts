@@ -11,6 +11,7 @@ import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component
 import { DisplayprofileComponent } from './patient/displayprofile/displayprofile.component';
 
 const routes: Routes = [
+  {path: '', redirectTo:'log-in', pathMatch:'full'},
   {path: 'log-in', component: LogInComponent},
   { path: 'sing-up patient', component: SingUpPatientComponent  },
   { path: 'sing-up doctor', component: SingUpDoctorComponent  },
@@ -30,4 +31,3 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule { }
-export const routingComponents = [SingUpPatientComponent, LogInComponent, PatientComponent, AddmeasurementComponent, DoctorComponent];

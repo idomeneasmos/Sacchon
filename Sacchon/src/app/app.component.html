@@ -1,14 +1,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <nav class="fixed-top" class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-flud">
+    <div class="my-2 my-lg-0 container-flud">
         <nav>
-            <a class="mo" routerLink="/Home" routerLinkActive="active"><img src="https://image.flaticon.com/icons/png/512/387/387595.png" width="50px" height="50px"><i class="fa fa-fw fa-home"></i> Home </a>
+            <a class="mo" routerLink="/Home" routerLinkActive="active"><img
+                    src="https://image.flaticon.com/icons/png/512/387/387595.png" width="50px" height="50px"><i
+                    class="fa fa-fw fa-home"></i> Home </a>
             <a class="mo" routerLink="/log-in" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Log in</a>
-            <a class="mo" routerLink="/sing-up patient" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Sign Up Patient</a>
-            <a class="mo" routerLink="/sing-up doctor" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Sing up Doctor</a>
-            <a class="mo" routerLink="/doctor" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Go to doctor</a>
+            <a class="mo" routerLink="/sing-up patient" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Sign
+                Up Patient</a>
+            <a class="mo" routerLink="/sing-up doctor" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Sing up
+                Doctor</a>
+            <a class="mo" routerLink="/doctor" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Go to
+                doctor</a>
         </nav>
+    </div>
+    <div class="text-right">
+        <form class="form-inline my-2 my-lg-0"  *ngIf="isLogged">
+            <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
+        </form>
     </div>
 </nav>
 
+
 <router-outlet></router-outlet>
+
+<!--
+<form class="form-inline" *ngIf="isLogged">
+    <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
+</form>
+
+
+-->

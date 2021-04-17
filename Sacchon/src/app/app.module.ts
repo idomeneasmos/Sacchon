@@ -1,11 +1,12 @@
+import { SingUpPatientComponent } from './sing-up-patient/sing-up-patient.component';
+import { SingUpDoctorComponent } from './sing-up-doctor/sing-up-doctor.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { ChiefComponent } from './chief/chief.component';
 import { PatientComponent } from './patient/patient.component';
 import { InfodoctorComponent } from './chief/infodoctor/infodoctor.component';
@@ -28,8 +29,7 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-  routingComponents,
+  AppComponent,
   ChiefComponent,
   InfodoctorComponent,
   InfopatientComponent,
@@ -43,7 +43,11 @@ import { HomeComponent } from './home/home.component';
   AddmeasurementComponent,
   DisplayprofileComponent,
   ListofmeasurementsComponent,
-  HomeComponent
+  HomeComponent,
+  SingUpDoctorComponent,
+  SingUpPatientComponent,
+  LogInComponent, 
+  PatientComponent
   ],
   imports: [
     BrowserModule,

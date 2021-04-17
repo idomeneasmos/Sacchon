@@ -1,4 +1,6 @@
+import { ListofmypatientsService } from './../listofmypatients/listofmypatients.service';
 import { Component, OnInit } from '@angular/core';
+import { Patient } from 'src/app/patient';
 
 @Component({
   selector: 'app-listoffreepatients',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListoffreepatientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private listofFreePatients: ListofmypatientsService) { }
 
+  ListofFreePatients: Patient[] =[] ;
   ngOnInit(): void {
+  }
+
+  getListofFreePatients(){
+    this.ListofFreePatients = [];
+    this.listofFreePatients.getlistofpatients().subscribe(data =>{
+      this.ListofFreePatients = data;
+      console.log(this.listofFreePatients);
+    });
+
   }
 
 }

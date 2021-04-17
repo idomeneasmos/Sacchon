@@ -1,14 +1,14 @@
 <div class="info-form" class="center">
-  <form class="form-inline justify-content-center" [formGroup]="form" onsubmit="">
+  <form class="form-inline justify-content-center" [formGroup]="form" (ngSubmit)="logIn()">
     <div class="grid">
       <h5 class="titles"> Enter your credentials:</h5>
       <div class="row">
         <div class="form-group mr-2">
-        <input type="text" class="form-control" id="username" placeholder="Enter email" #user>
+        <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
       </div></div>
       <div class="row">
         <div class="form-group mr-2">
-        <input type="text" class="form-control" id="pass" placeholder="Enter password" #pass>
+        <input type="text" class="form-control" id="password" placeholder="Enter password" #password formControlName="password">
       </div></div>
       <div class="row">
         <div class="col text-center">

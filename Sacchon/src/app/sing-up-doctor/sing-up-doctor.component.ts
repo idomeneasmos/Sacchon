@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Doctor } from './../doctor';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-sing-up-doctor',
   templateUrl: './sing-up-doctor.component.html',

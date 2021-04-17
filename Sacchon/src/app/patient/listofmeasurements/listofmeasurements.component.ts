@@ -10,11 +10,9 @@ import { Measurement } from 'src/app/measurement';
 
 export class ListofmeasurementsComponent implements OnInit {
 
-  constructor(private Listofmeasurements: ListofmeasurementsService) {
-    this.Listofmeasurementss = [];
-   }
+  constructor(private Listofmeasurements: ListofmeasurementsService) { }
 
-  Listofmeasurementss: Measurement[];
+  Listofmeasurementss: Measurement[] = [];
 
   ngOnInit(): void {
   }

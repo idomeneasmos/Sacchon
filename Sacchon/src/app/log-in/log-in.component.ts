@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { LogInService } from './log-in.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-log-in',
@@ -9,22 +12,34 @@ import { Component, OnInit } from '@angular/core';
 export class LogInComponent implements OnInit {
 
   form!:FormGroup;
-  constructor(private fb:FormBuilder) {
-  }
+  constructor(private fb:FormBuilder, private LogInService:LogInService, private router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      username: ["", Validators.required],
+      email: ["", Validators.required],
       password: ["", Validators.required]
-
     })
 
   }
 
   logIn(){
-    let username:string;
+    let email:string;
     let password:string;
-    
+
+
+    let responesString = this.LogInService.authentication(this.form.value);
+
+    if(true){
+      email = this.form.get('email').value;
+      password = this.form.get('password').value;
+      sessionStorage.setItem("credentials ", email + ":" + password);
+      this.router.navigate(['patient'])
+
+    }
+    else{
+      alert("Wrong email or password");
+    }
+
   }
 
 }

@@ -1,1 +1,19 @@
-<p>listofmypatients works!</p>
+<p>listofmeasurements works!</p>
+
+<div class="row">
+    <div *ngFor="let patient of Listofmypatients">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              Patients
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{patient.Id}}</li>
+              <li class="list-group-item">{{patient.Fullname}}</li>
+            </ul>
+          </div>
+
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>
