@@ -1,11 +1,4 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    background-color: cadetblue;
-  }
-  .center {
+.center {
     margin: 0;
     position: absolute;
     top: 30%;
@@ -23,26 +16,20 @@
 }
 
 .row {
-  margin-top: 40px;
+  margin-top: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} 
+}
+.col {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
   button {
     border: none;
-    outline: 0;
-    display: inline-block;
     color: white;
     background-color:lightsteelblue;
-    text-align: center;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 15px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease 0s;
-    cursor: pointer;
-    outline: none
   }
-
   #calc1, #calc2{
     margin: 0 auto;
   }
@@ -60,4 +47,20 @@ h5, h6, h7 {
 }
 #labelinfo1, #labelinfo2 {
   color: cadetblue;
+  text-align: center;
+  box-shadow: 5px 10px 15px rgba(216, 216, 216, 0.11);
+  font-size: medium;
+}
+
+#card1{
+  margin-top: 40px;
+  background-color:#e0e0e0;
+  height: 420px;
+  shape-outside:inherit;
+  text-align: center;
+}
+.form-control {
+  text-align: center;
+  border:none;
+  box-shadow: 5px 10px 15px rgba(9, 85, 75, 0.11);
 }

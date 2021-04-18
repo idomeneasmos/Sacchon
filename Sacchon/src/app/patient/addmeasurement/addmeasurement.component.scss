@@ -4,10 +4,19 @@
     margin: 70px;
 }
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 10px 15px rgba(216, 216, 216, 0.11);
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 40px;
+    font-size: medium;
+
+  }
+  #card1{
+    margin-top: 40px;
+    background-color:#e0e0e0;
+    height: 400px;
+    shape-outside:inherit;
+    text-align: center;
   }
   button {
     border: none;
@@ -32,4 +41,9 @@
   }
   #formg {
       text-align: center;
+  }
+  .form-control {
+    text-align: center;
+    border:none;
+    box-shadow: 5px 10px 15px rgba(126, 125, 125, 0.11);
   }

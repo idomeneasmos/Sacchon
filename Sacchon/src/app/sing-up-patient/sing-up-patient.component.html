@@ -1,42 +1,50 @@
-<div class="info-form" class="center">
-  <div class="row">
-    <form [formGroup]="form"  (ngSubmit)="onClickSubmit()">
-      <h5 class="titles"> Enter your information:</h5>
+<div class="container" style="margin-top: 40px;">
+  <div id="card1" class="card" class="shadow-lg p-3 mb-5 bg-light rounded">
+    <div class="info-form" class="center">
       <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #fullName formControlName="fullName">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
-        </div>
-        <div class="col">
-          <input type="password" class="form-control" id="password" placeholder="Enter password" #password formControlName="password">
-        </div>
-        <div class="col">
-          <select class="form-control" id="gender" placeholder="Enter gender" #gender formControlName="gender">
-            <option value="0">Male</option>
-            <option value="1">Female</option>
-          </select>
-        </div>
+        <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+          <h5 class="titles"> Enter your information</h5>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #fullName
+                formControlName="fullName">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" id="email" placeholder="Enter email" #email
+                formControlName="email">
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" id="password" placeholder="Enter password" #password
+                formControlName="password">
+            </div>
+            <div class="col">
+              <select class="form-control" id="gender" placeholder="Enter gender" #gender formControlName="gender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="Pdate">Date of Birth</label>
+              <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter dateofbirth" #dateOfBirth
+                formControlName="dateOfBirth">
+            </div>
+            <div class="col">
+              <input type="number" class="form-control" id="weight" placeholder="Enter weight (Kg)" #weight
+                formControlName="weight">
+            </div>
+            <div class="col">
+              <input type="number" class="form-control" id="height" placeholder="Enter height (cm)" #height
+                formControlName="height">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </div>
+          </div>
+
+        </form>
       </div>
-      <div class="row">
-        <div class="col">
-          <label for="Pdate">Date of Birth</label>
-          <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter dateofbirth" #dateOfBirth formControlName="dateOfBirth">
-        </div>
-        <div class="col">
-          <input type="number" class="form-control" id="weight" placeholder="Enter weight (Kg)" #weight formControlName="weight">
-        </div>
-        <div class="col">
-          <input type="number" class="form-control" id="height" placeholder="Enter height (cm)" #height formControlName="height">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          <button type="submit" class="btn btn-outline-secondary">Submit</button>
-        </div>
-      </div>
-    
-    </form>
-  </div>
-</div>
+    </div>

@@ -37,7 +37,7 @@ import { DisplayDoctorProfileComponent } from './doctor/display-doctor-profile/d
 import { EditaccountComponent } from './patient/editaccount/editaccount.component';
 import { DeletedoctoraccountComponent } from './doctor/deletedoctoraccount/deletedoctoraccount.component';
 import { EditdoctoraccountComponent } from './doctor/editdoctoraccount/editdoctoraccount.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,8 @@ import { EditdoctoraccountComponent } from './doctor/editdoctoraccount/editdocto
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    NgMonthPickerModule
+    NgMonthPickerModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
