@@ -1,12 +1,14 @@
+import { Patient } from 'src/app/patient';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Patient } from './../patient';
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class SingUpPatientService {
+export class EditaccountService {
+
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +16,7 @@ export class SingUpPatientService {
 
 
   addpatient(patient:Patient):Observable<Patient>{
-    return this.http.post<Patient>(
+    return this.http.put<Patient>(
       `${this.baseUrl}/patient`,
       patient
     )

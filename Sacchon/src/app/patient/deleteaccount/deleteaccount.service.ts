@@ -1,21 +1,24 @@
 import { Observable } from 'rxjs';
+import { Patient } from 'src/app/patient';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Patient } from 'src/app/patient';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ListoffreepatientsService {
+export class DeleteaccountService {
 
   constructor(private http: HttpClient) { }
 
   private readonly baseUrl='http://localhost:9000/v1'
 
-  getlistoffreepatients(): Observable<Patient[]>{
-    return this.http.get<Patient[]>(
-      `${this.baseUrl}/Listofmypatients/1`
+
+  deleteaccount():void{
+
+    this.http.delete<Patient>(
+      `${this.baseUrl}/patient`
     )
 
   }
+
 }

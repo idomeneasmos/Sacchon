@@ -1,12 +1,12 @@
 export interface Patient {
-    Id: number,
-    Fullname: string,
-    Password: string,
-    Email: string,
-    Gender: boolean,
-    DateOfBirth: Date,
-    Weight: number,
-    Height: number,
-    DoctorsId: number,
-    Active: boolean
+    id: number,
+    fullName: string,
+    password: string,
+    email: string,
+    gender: boolean,
+    dateOfBirth: Date,
+    weight: number,
+    height: number,
+    doctorsId: number,
+    active: boolean
 }

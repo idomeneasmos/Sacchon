@@ -1,3 +1,4 @@
+import { Patient } from 'src/app/patient';
 import { LogInService } from './log-in/log-in.service';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -30,6 +31,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription = this.LogInService.responseOfAuth.subscribe(data => {
       this.isLogged = data;
     })
+  }
+  myProfile(): Subscription{
+    return this.subscription;
+
   }
 
   ngOnDestroy(): void {

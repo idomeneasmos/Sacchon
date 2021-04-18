@@ -1,7 +1,7 @@
+import { Doctor } from './../../doctor';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Doctor } from 'src/app/doctor';
 
 
 @Injectable({
@@ -9,14 +9,16 @@ import { Doctor } from 'src/app/doctor';
 })
 export class EditdoctoraccountService {
 
-  private readonly baseUrl='http://localhost:4200';
+  private readonly baseUrl='http://localhost:9000/v1'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
 
-  adddoctor(doctor:Doctor):Observable<Doctor>{
-    return this.http.post<Doctor>(
+   }
+
+  editdoctor(doctor:Doctor):Observable<Doctor>{
+    return this.http.put<Doctor>(
       `${this.baseUrl}/doctor`,
-      doctor.Id
+      doctor
     )
   }
 

@@ -16,19 +16,19 @@ export class SingUpDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      Fullname: ["",],
-      Password: ["",],
-      Email: ["",],
-      Speciality: ["",]
+      fullName: ["",],
+      password: ["",],
+      email: ["",],
+      speciality: ["",]
     })
   }
 
 
   onClickSubmit(){
     let doctor:Doctor = this.form.value;
+    doctor.active=true;
     this.SignupService.adddoctor(doctor).subscribe( data =>{
         console.log(data);
-        alert(data);
       }
     )
     this.router.navigate(['doctor'])

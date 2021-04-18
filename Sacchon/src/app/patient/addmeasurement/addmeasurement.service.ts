@@ -10,11 +10,11 @@ export class AddmeasurementService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:4200/addmeasurement';
+  private readonly baseUrl='http://localhost:9000/v1'
 
   addMeasurement(measurement: Measurement): Observable<Measurement>{
     return this.http.post<Measurement>(
-      `${this.baseUrl}`,
+      `${this.baseUrl}/patientsData`,
       measurement
     )
 

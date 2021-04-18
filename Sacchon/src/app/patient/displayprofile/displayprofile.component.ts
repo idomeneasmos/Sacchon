@@ -16,6 +16,7 @@ export class DisplayprofileComponent implements OnInit {
   Profile: Patient;
 
   ngOnInit(): void {
+    this.getProfile();
   }
 
   getProfile() {

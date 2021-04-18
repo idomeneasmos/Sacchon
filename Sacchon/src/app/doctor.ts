@@ -1,8 +1,8 @@
 export interface Doctor {
-    Id: number,
-    Fullname: string,
-    Password: string,
-    Email: string,
-    Speciality: string,
-    Active: boolean
+    id: number;
+    fullName: string;
+    password: string;
+    email: string;
+    speciality: string;
+    active: boolean;
 }

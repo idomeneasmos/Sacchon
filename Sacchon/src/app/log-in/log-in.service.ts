@@ -8,15 +8,16 @@ import { Observable, Subject } from 'rxjs';
 })
 export class LogInService {
 
-  private readonly baseUrl = 'http://localhost:4200'
+  private readonly baseUrl='http://localhost:9000/v1'
   params = new HttpParams();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    
+   }
 
   responseOfAuth = new Subject<boolean>();
 
   authentication(values: any): Observable<Patient> {
-    this.responseOfAuth.next(true);
-    this.params.append('email', values.get('Email').value);
+    this.params.set('email', values.get('email').value);
     this.params.append('password', values.get('password').value);
     return this.http.get<any>(
       `${this.baseUrl}/patient`,

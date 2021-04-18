@@ -12,7 +12,7 @@ export class ListofmeasurementsComponent implements OnInit {
 
   constructor(private Listofmeasurements: ListofmeasurementsService) { }
 
-  Listofmeasurementss: Measurement[] = [];
+  Listofmeasurementss: Measurement[];
 
   ngOnInit(): void {
   }

@@ -1,42 +1,47 @@
 <div class="info-form" class="center">
-    <div class="row">
-      <form>
-        <h5 class="titles"> Edit personal information:</h5>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" id="Fullname" placeholder="Edit Fullname" #Fullname formControlName="Fullname">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id="Email" placeholder="Edit email" #Email formControlName="Email">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id="Password" placeholder="Edit password" #Password formControlName="Password">
-          </div>
-          <div class="col">
-            <select class="form-control" id="Gender" placeholder="Enter gender" #Gender formControlName="Gender">
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
+  <div class="row">
+    <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+      <h5 class="titles"> Enter your information:</h5>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #fullName
+            formControlName="fullName">
         </div>
-        <div class="row">
-          <div class="col">
-            <label for="Pdate">Date of Birth</label>
-            <input type="date" class="form-control" id="DateOfBirth" placeholder="Edit dateofbirth" #DateOfBirth formControlName="DateOfBirth">
-          </div>
-          <div class="col">
-            <input type="number" class="form-control" id="Weight" placeholder="Edit weight (Kg)" #Weight formControlName="Weight">
-          </div>
-          <div class="col">
-            <input type="number" class="form-control" id="Height" placeholder="Edit height (cm)" #Height formControlName="Height">
-          </div>
+        <div class="col">
+          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
         </div>
-        <div class="row">
-          <div class="col text-center">
-            <button type="button" class="btn btn-outline-secondary">Save</button>
-          </div>
+        <div class="col">
+          <input type="password" class="form-control" id="password" placeholder="Enter password" #password
+            formControlName="password">
         </div>
-      
-      </form>
-    </div>
+        <div class="col">
+          <select class="form-control" id="gender" placeholder="Enter gender" #gender formControlName="gender">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="Pdate">Date of Birth</label>
+          <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter dateofbirth" #dateOfBirth
+            formControlName="dateOfBirth">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" id="weight" placeholder="Enter weight (Kg)" #weight
+            formControlName="weight">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" id="height" placeholder="Enter height (cm)" #height
+            formControlName="height">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <button type="submit" class="btn btn-outline-secondary">Submit</button>
+        </div>
+      </div>
+
+    </form>
   </div>
+</div>

@@ -10,13 +10,6 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:4200';
+  private readonly baseUrl='http://localhost:9000/v1'
 
-  getPatient(): Observable<Patient[]>{
-    return this.http.get<Patient[]>(
-      `${this.baseUrl}/patient`,
-      {headers: new HttpHeaders({'Authorization':'Basic' + btoa(sessionStorage.getItem("credentials"))})}
-    )
-
-  }
 }

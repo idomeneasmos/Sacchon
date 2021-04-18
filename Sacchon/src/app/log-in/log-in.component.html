@@ -14,7 +14,8 @@
 
       <div class="row">
         <div class="form-group mr-2">
-          <small class="form-text text-muted" *ngIf="form.get('password').hasError('required')">Password Required</small>
+          <small class="form-text text-muted" *ngIf="form.get('password').hasError('required')">Password
+            Required</small>
           <input type="password" class="form-control" id="password" placeholder="Enter password" #password
             formControlName="password">
         </div>

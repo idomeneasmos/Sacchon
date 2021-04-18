@@ -28,9 +28,8 @@ export class EditdoctoraccountComponent implements OnInit {
 
     onClickSubmit(){
       let doctor:Doctor = this.form.value;
-    this.editdoctorsaccount.adddoctor(doctor).subscribe( data =>{
+    this.editdoctorsaccount.editdoctor(doctor).subscribe( data =>{
         console.log(data);
-        alert(data);
       }
     )
     this.router.navigate(['doctor']);

@@ -10,12 +10,12 @@ export class SingUpDoctorService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:4200'
+  private readonly baseUrl='http://localhost:9000/v1'
 
   adddoctor(doctor:Doctor):Observable<Doctor>{
     return this.http.post<Doctor>(
       `${this.baseUrl}/doctor`,
-      doctor.Id
+      doctor
     )
   }
 

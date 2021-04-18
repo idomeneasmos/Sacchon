@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'patient', component: PatientComponent  },
   { path: 'listofmeasurements',  component: ListofmeasurementsComponent},  
   { path: 'addmeasurement', component: AddmeasurementComponent  },
-  { path: 'Home',  component: HomeComponent},
+  { path: 'home',  component: HomeComponent},
   { path: 'doctor',  component: DoctorComponent},
   { path: 'add-consultation',  component: AddConsultationComponent},
   { path: 'displayprofile', component: DisplayprofileComponent },

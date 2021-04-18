@@ -25,13 +25,13 @@ export class LogInComponent implements OnInit {
   logIn(){
     let email:string;
     let password:string;
-    let respones = this.LogInService.authentication(this.form.value);
     console.log('1');
     console.log(this.form.get('email'));
     if(true){
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials ", email + ":" + password);
+      console.log('respones')
       this.router.navigate(['patient'])
 
     }

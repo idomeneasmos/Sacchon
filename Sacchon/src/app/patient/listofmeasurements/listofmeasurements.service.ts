@@ -1,4 +1,4 @@
-import { Measurement } from './../../measurement';
+import { Measurement } from 'src/app/measurement';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
