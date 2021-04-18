@@ -1,6 +1,6 @@
 import { LogInService } from './log-in/log-in.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -10,39 +10,39 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'myapp';
-  isLogged:boolean;
+  isLogged: boolean;
 
-  subscription:Subscription;
-  
-  constructor(private router:Router, private LogInService: LogInService){}
+  subscription: Subscription;
 
-  ngOnInit(): void{
-    if (sessionStorage.getItem("credentials")== null){
+  constructor(private router: Router, private LogInService: LogInService) { }
+
+  ngOnInit(): void {
+    if (sessionStorage.getItem("credentials") == null) {
       this.isLogged = false;
       this.router.navigate(['log-in'])
     }
-    else{
+    else {
       this.isLogged = true;
       this.router.navigate(['patient'])
     }
-    this.subscription = this.LogInService.responseOfAuth.subscribe( data=>{
+    this.subscription = this.LogInService.responseOfAuth.subscribe(data => {
       this.isLogged = data;
     })
   }
 
-ngOmDestroy(): void{
-  if(this.subscription){
-    this.subscription.unsubscribe();
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
-}
 
-  logOut(){
+  logOut() {
     sessionStorage.removeItem("credentials");
     this.isLogged = false;
     this.router.navigate(['log-in'])
-    
+
   }
 }
 

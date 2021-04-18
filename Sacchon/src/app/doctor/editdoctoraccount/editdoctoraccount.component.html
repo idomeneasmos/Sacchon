@@ -1,5 +1,5 @@
 <div class="info-form" class="center">
-    <form class="form-inline justify-content-center">
+    <form class="form-inline justify-content-center" [formGroup]="form"  (ngSubmit)="onClickSubmit()">
       <div class="grid">
         <h5 class="titles"> Edit your information:</h5>
         <div class="row">
@@ -16,8 +16,7 @@
         </div>
         <div class="row">
           <div class="col text-center">
-            <button type="button" class="btn btn-outline-secondary"
-            (click)="EditDoctor(Dfullname,Demail,Dpass,speciality)">Save</button>
+            <button type="submit" class="btn btn-outline-secondary">Save</button>
           </div>
         </div>
       </div>

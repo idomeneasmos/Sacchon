@@ -13,7 +13,7 @@ export class DoctorService {
 
   getdoctor():Observable<Doctor[]>{
     return this.http.get<Doctor[]>(
-      `${this.baseUrl}/patient`,
+      `${this.baseUrl}/doctor`,
       {headers: new HttpHeaders({'Authorization':'Basic' + btoa(sessionStorage.getItem("credentials"))})}
     )
   }

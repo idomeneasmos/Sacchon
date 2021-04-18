@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SingUpDoctorService } from './sing-up-doctor.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Doctor } from './../doctor';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class SingUpDoctorComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpDoctorService) { }
+  constructor(private fb: FormBuilder, private SignupService: SingUpDoctorService,  private router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -30,6 +31,7 @@ export class SingUpDoctorComponent implements OnInit {
         alert(data);
       }
     )
+    this.router.navigate(['doctor'])
 
   }
 

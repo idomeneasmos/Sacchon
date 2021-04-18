@@ -19,11 +19,12 @@ export class LogInService {
     this.params.append('email', values.get('Email').value);
     this.params.append('password', values.get('password').value);
     return this.http.get<any>(
-      `${this.baseUrl}/log-in`,
+      `${this.baseUrl}/patient`,
       { params: this.params }
     )
 
   }
+
 
 }
 

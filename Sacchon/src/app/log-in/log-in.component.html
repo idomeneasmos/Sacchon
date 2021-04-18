@@ -1,19 +1,27 @@
-<style ></style>
+<style></style>
 <div class="info-form" class="center">
   <form class="form-inline justify-content-center" [formGroup]="form" (ngSubmit)="logIn()">
     <div class="grid">
       <h5 class="titles"> Enter your credentials:</h5>
       <div class="row">
         <div class="form-group mr-2">
-        <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
-      </div></div>
+          <small class="form-text text-muted" *ngIf="form.get('email').hasError('required')">Email Required</small>
+          <small class="form-text text-muted" *ngIf="form.get('email').hasError('email')">This isn't email</small>
+          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
+        </div>
+
+      </div>
+
       <div class="row">
         <div class="form-group mr-2">
-        <input type="text" class="form-control" id="password" placeholder="Enter password" #password formControlName="password">
-      </div></div>
+          <small class="form-text text-muted" *ngIf="form.get('password').hasError('required')">Password Required</small>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" #password
+            formControlName="password">
+        </div>
+      </div>
       <div class="row">
         <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary">Submit</button>
+          <button [disabled]='form.invalid' type="submit" class="btn btn-outline-secondary">Submit</button>
         </div>
       </div>
     </div>

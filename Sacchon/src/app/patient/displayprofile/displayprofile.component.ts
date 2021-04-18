@@ -11,26 +11,25 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayprofileComponent implements OnInit {
 
   constructor(private router: Router, private ProfileService: DisplayprofileService) {
-    this.Profile = {} as Patient;
   }
 
-   Profile: Patient;
+  Profile: Patient;
 
   ngOnInit(): void {
   }
 
-  getProfile(){
-    this.ProfileService.getprofile().subscribe(data =>{
+  getProfile() {
+    this.ProfileService.getprofile().subscribe(data => {
       this.Profile = data;
       console.log(this.Profile);
     });
   }
 
-  edit(){
+  edit() {
     this.router.navigate(['editAccount']);
   }
 
-  delete(){
+  delete() {
     this.router.navigate(['deleteAccount']);
   }
 }

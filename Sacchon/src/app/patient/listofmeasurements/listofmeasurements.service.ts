@@ -1,6 +1,6 @@
 import { Measurement } from './../../measurement';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -11,11 +11,11 @@ export class ListofmeasurementsService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:4200'
+  private readonly baseUrl='http://localhost:4200/patient' + {headers: new HttpHeaders({'Authorization':'Basic' + btoa(sessionStorage.getItem("credentials"))})}
 
   getlistofmeasurements(): Observable<Measurement[]>{
     return this.http.get<Measurement[]>(
-      `${this.baseUrl}/Listofmeasurements`
+      `${this.baseUrl}/listofmeasurements`
     )
 
   }
