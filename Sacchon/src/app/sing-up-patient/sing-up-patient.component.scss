@@ -10,28 +10,34 @@
   text-align: center;
   width: 300px;
   margin: 10px;
-}
-.titles {
-  color: cadetblue;
+  border:none;
+  box-shadow: 5px 10px 15px rgba(9, 85, 75, 0.11);
 }
 
 button {
   border: none;
-  outline: 0;
-  display: inline-block;
   color: white;
   background-color:lightsteelblue;
   text-align: center;
-  align-self: center;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease 0s;
-  cursor: pointer;
-  outline: none
 }
 h5 {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
+  margin-top: 20px;
 }
 .row {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#card1{
+  background-color:#e0e0e0;
+  height: 420px;
+  shape-outside:inherit;
+}
+
+label {
+  margin-left: 20px;
+  color: lightslategray;
+  font-style: italic;
 }

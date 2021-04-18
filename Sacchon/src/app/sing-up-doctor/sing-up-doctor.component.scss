@@ -7,31 +7,33 @@
   transform: translate(-50%, -50%);
 }
 .row {
-  margin-top: 30px;
+  margin-top: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .form-control {
   text-align: center;
   width: 300px;
+  border:none;
+  box-shadow: 5px 10px 15px rgba(9, 85, 75, 0.11);
 }
-.titles {
-  color: cadetblue;
-}
+
 h5 {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
+  margin-top: 20px;
 }
 
 button {
   border: none;
-  outline: 0;
-  display: inline-block;
   color: white;
   background-color:lightsteelblue;
   text-align: center;
-  align-self: center;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease 0s;
-  cursor: pointer;
-  outline: none
+}
+
+#card1{
+  background-color:#e0e0e0;
+  height: 420px;
+  shape-outside:inherit;
 }

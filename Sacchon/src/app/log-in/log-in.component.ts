@@ -16,7 +16,6 @@ export class LogInComponent implements OnInit {
 
   searchUser(): void {
     this.router.navigate(['patient']);
-    //alert('jiojoi');
   }
   ngOnInit(): void {
   }

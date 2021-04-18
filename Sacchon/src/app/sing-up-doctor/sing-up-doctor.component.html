@@ -1,25 +1,29 @@
-<div class="info-form" class="center">
-  <form class="form-inline justify-content-center">
-    <div class="grid">
-      <h5 class="titles"> Enter your information:</h5>
-      <div class="row">
-        <input type="text" class="form-control" id="Dfullname" placeholder="Enter Fullname" #Dfullname>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Demail" placeholder="Enter email" #Demail>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="Dpass" placeholder="Enter password" #Dpass>
-      </div>
-      <div class="row">
-        <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" #speciality>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          <button type="button" class="btn btn-outline-secondary"
-            (click)="WriteDoctor(Dfullname,Demail,Dpass,speciality)">Submit</button>
+<div class="container" style="margin-top: 40px;">
+  <div id="card1" class="card" class="shadow-lg p-3 mb-5 bg-light rounded">
+    <div class="info-form" class="center">
+      <form class="form-inline justify-content-center">
+        <div class="grid">
+          <h5 class="titles"> Enter your information</h5>
+          <div class="row">
+            <input type="text" class="form-control" id="Dfullname" placeholder="Enter Fullname" #Dfullname>
+          </div>
+          <div class="row">
+            <input type="text" class="form-control" id="Demail" placeholder="Enter email" #Demail>
+          </div>
+          <div class="row">
+            <input type="text" class="form-control" id="Dpass" placeholder="Enter password" #Dpass>
+          </div>
+          <div class="row">
+            <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" #speciality>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button type="button" class="btn btn-outline-secondary"
+                (click)="WriteDoctor(Dfullname,Demail,Dpass,speciality)">Submit</button>
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>
