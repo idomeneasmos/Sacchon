@@ -4,19 +4,15 @@ import { Color, Label, ChartsModule } from 'ng2-charts';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-consultation',
-  templateUrl: './add-consultation.component.html',
-  styleUrls: ['./add-consultation.component.scss']
+  selector: 'app-patientmeasurements',
+  templateUrl: './patientmeasurements.component.html',
+  styleUrls: ['./patientmeasurements.component.scss']
 })
-export class AddConsultationComponent implements OnInit {
+export class PatientmeasurementsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  addConsultation(): void {
-    this.router.navigate(['newconsultation']);
   }
 
   lineChartData: ChartDataSets[] = [
@@ -31,8 +27,8 @@ export class AddConsultationComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: '#69F0AE',
-      backgroundColor: '#FF5252',
+      borderColor: '#ef5350',
+      backgroundColor: '#ffcdd2',
     },
   ];
 
@@ -52,13 +48,13 @@ export class AddConsultationComponent implements OnInit {
 
   lineChartColors2: Color[] = [
     {
-      borderColor: '#18FFFF',
-      backgroundColor : '#6ab7ff',
+      borderColor: '#4fc3f7',
+      backgroundColor : '#b3e5fc',
     },
   ];
 
   lineChartLegend2 = true;
   lineChartPlugins2 = [];
   lineChartType2: ChartType = 'line'; 
-  
+
 }

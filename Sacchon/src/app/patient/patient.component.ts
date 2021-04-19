@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {FormGroup, FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-patient',
@@ -15,5 +17,12 @@ export class PatientComponent implements OnInit {
   addMeasurement(): void {
     this.router.navigate(['addmeasurement']);
   }
+  seeMeasurement(): void {
+    this.router.navigate(['patientmeasurements']);
+  }
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
 
 }

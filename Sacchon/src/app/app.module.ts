@@ -38,6 +38,13 @@ import { EditaccountComponent } from './patient/editaccount/editaccount.componen
 import { DeletedoctoraccountComponent } from './doctor/deletedoctoraccount/deletedoctoraccount.component';
 import { EditdoctoraccountComponent } from './doctor/editdoctoraccount/editdoctoraccount.component';
 import {MatTableModule} from '@angular/material/table';
+import { DaterangeComponent } from './patient/daterange/daterange.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { PatientmeasurementsComponent } from './patient/patientmeasurements/patientmeasurements.component';
+
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -67,7 +74,9 @@ import {MatTableModule} from '@angular/material/table';
   EditaccountComponent,
   EditdoctoraccountComponent,
   DeletedoctoraccountComponent,
-  DeleteaccountComponent
+  DeleteaccountComponent,
+  DaterangeComponent,
+  PatientmeasurementsComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +90,12 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     MatIconModule,
     NgMonthPickerModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
