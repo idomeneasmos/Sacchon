@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LogInService } from './log-in.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-log-in',
@@ -18,33 +18,44 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
-      password: ["", Validators.required]
+      password: ["", Validators.required],
+      kind: ["", Validators.required]
     })
   }
 
-  isauth(response):boolean{
-    return true
-  }
-  kindofpage(values: any): String{
+  getId(): string{
+    let id: string;
 
-    
-    return "";
+
+    return id;
+
+  }
+
+  isauth(response):boolean{
+    return true;
   }
 
   logIn(){
+    
     let email:string;
     let password:string;
-    let response = this.LogInService.authentication(this.form.value);
-    let kindOfPage = this.kindofpage(response);
-    let id=19;
-    if(true){
+    let kind= this.form.get('kind').value;
+    let response = this.LogInService.authentication(kind , this.form);
+    response.subscribe(data=>{
+      console.log(data)
+    }
+      )
+
+
+   let id=this.getId();
+    if(this.isauth(response)){
       this.app.setIsLogged();
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials ", email + ":" + password);
-      console.log(sessionStorage.getItem);
-      this.router.navigate([kindOfPage + `${id}`])
-
+      sessionStorage.setItem("id", id);
+      //console.log(sessionStorage.getItem("id"));
+      this.router.navigate([kind])
     }
     else{
       alert("Wrong email or password");

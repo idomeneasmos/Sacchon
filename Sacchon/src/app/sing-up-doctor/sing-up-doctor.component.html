@@ -9,18 +9,26 @@
               <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #Fullname
                 formControlName="fullName">
             </div>
+            <div class="text-danger" *ngIf="form.get('fullName').hasError('required')">Your Full Name
+              Required</div>
             <div class="row">
               <input type="text" class="form-control" id="email" placeholder="Enter email" #Email
                 formControlName="email">
             </div>
+            <div class="text-danger" *ngIf="form.get('email').hasError('required')">Email Required</div>
+            <div class="text-danger" *ngIf="form.get('email').hasError('email')">This isn't email</div>
             <div class="row">
               <input type="text" class="form-control" id="password" placeholder="Enter password" #Password
                 formControlName="password">
             </div>
+            <div class="text-danger" *ngIf="form.get('password').hasError('required')">Password
+              Required</div>
             <div class="row">
               <input type="text" class="form-control" id="speciality" placeholder="Enter speciality" #Speciality
                 formControlName="speciality">
             </div>
+            <div class="text-danger" *ngIf="form.get('speciality').hasError('required')">Your Speciality
+              Required</div>
             <div class="row">
               <div class="col text-center">
                 <button type="submit" class="btn btn-outline-secondary">Submit</button>

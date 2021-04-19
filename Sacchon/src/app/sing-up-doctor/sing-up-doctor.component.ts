@@ -1,7 +1,7 @@
 import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { SingUpDoctorService } from './sing-up-doctor.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Doctor } from './../doctor';
 import { Component, OnInit } from '@angular/core';
 
@@ -17,10 +17,10 @@ export class SingUpDoctorComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      fullName: ["",],
-      password: ["",],
-      email: ["",],
-      speciality: ["",]
+      fullName: ["", Validators.required],
+      password: ["",Validators.required],
+      email: ["",[Validators.required, Validators.email]],
+      speciality: ["",Validators.required]
     })
   }
 
@@ -29,6 +29,7 @@ export class SingUpDoctorComponent implements OnInit {
     this.app.setIsLogged();
     let doctor:Doctor = this.form.value;
     doctor.active=true;
+    sessionStorage.setItem("id", "5");
     this.SignupService.adddoctor(doctor).subscribe( data =>{
         console.log(data);
       }
