@@ -2,26 +2,29 @@
 <div class="container" style="margin-top: 10%;">
   <div id="card1" class="card" class="shadow-lg p-3 mb-5 bg-light rounded">
 <div class="info-form" class="center">
-  <form class="form-inline justify-content-center" [formGroup]="form" (ngSubmit)="logIn()">
+  <form class="form-inline justify-content-center needs-validation" [formGroup]="form" (ngSubmit)="logIn()">
     <div class="grid">
       <h5 class="titles"> Enter your credentials:</h5>
       <div class="row">
         <div class="form-group mr-2">
-          <small class="form-text text-muted" *ngIf="form.get('email').hasError('required')">Email Required</small>
-          <small class="form-text text-muted" *ngIf="form.get('email').hasError('email')">This isn't email</small>
-          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
+          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email" required>
         </div>
 
       </div>
+          <div class="text-danger" *ngIf="form.get('email').hasError('required')">Email Required</div>
+          <div class="text-danger" *ngIf="form.get('email').hasError('email')">This isn't email</div>
+        
 
       <div class="row">
         <div class="form-group mr-2">
-          <small class="form-text text-muted" *ngIf="form.get('password').hasError('required')">Password
-            Required</small>
+          
           <input type="password" class="form-control" id="password" placeholder="Enter password" #password
             formControlName="password">
-        </div>
+            </div>
       </div>
+        <div class="text-danger" *ngIf="form.get('password').hasError('required')">Password
+            Required</div>
+          
       <div class="row">
         <div class="col text-center">
           <button [disabled]='form.invalid' type="submit" class="btn btn-outline-secondary">Submit</button>

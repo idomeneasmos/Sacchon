@@ -11,19 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteaccountComponent implements OnInit {
 
-  constructor(private deleteaccount:DeleteaccountService,  private router:Router) { }
+  constructor(private deleteaccount: DeleteaccountService, private router: Router) { }
 
+  account;
   ngOnInit(): void {
   }
 
-  deleteAccount(){
-    this.deleteaccount.deleteaccount();    
+  deleteAccount() {
+    let id = '18';
+    this.deleteaccount.deleteaccount(id)
+      .subscribe(data => {
+        this.account = this.account.filter(item => item.id !== id)
+
+      }
+      )
+
+      ;
     this.router.navigate(['home'])
 
   }
 
-
-  gobacktopatient():void{
+  gobacktopatient(): void {
     this.router.navigate(['patient']);
   }
 

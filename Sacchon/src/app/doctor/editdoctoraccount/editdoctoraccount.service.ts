@@ -9,15 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class EditdoctoraccountService {
 
-  private readonly baseUrl='http://localhost:9000/v1'
+  private readonly baseUrl='http://localhost:9000/v1/doctor'
 
   constructor(private http: HttpClient) {
 
    }
 
   editdoctor(doctor:Doctor):Observable<Doctor>{
-    return this.http.put<Doctor>(
-      `${this.baseUrl}/doctor`,
+    return this.http.put<Doctor>(this.baseUrl+'/'+doctor.id ,
       doctor
     )
   }

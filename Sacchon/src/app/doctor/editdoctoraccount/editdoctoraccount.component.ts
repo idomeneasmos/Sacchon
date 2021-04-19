@@ -14,24 +14,24 @@ export class EditdoctoraccountComponent implements OnInit {
 
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private editdoctorsaccount: EditdoctoraccountService,  private router:Router) { }
-  
+  constructor(private fb: FormBuilder, private editdoctorsaccount: EditdoctoraccountService, private router: Router) { }
 
-    ngOnInit(): void {
-      this.form = this.fb.group({
-        Fullname: ["",],
-        Password: ["",],
-        Email: ["",],
-        Speciality: ["",]
-      })
-    }
 
-    onClickSubmit(){
-      let doctor:Doctor = this.form.value;
-    this.editdoctorsaccount.editdoctor(doctor).subscribe( data =>{
-        console.log(data);
-      }
-    )
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      fullName: ["",],
+      password: ["",],
+      email: ["",],
+      speciality: ["",]
+    })
+  }
+
+  onClickSubmit() {
+    let doctor: Doctor = this.form.value;
+    doctor.id=8;
+    this.editdoctorsaccount.editdoctor(doctor).subscribe(data => {
+      doctor == data;
+    })
     this.router.navigate(['doctor']);
-    }
+  }
 }

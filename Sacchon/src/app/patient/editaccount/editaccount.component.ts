@@ -3,6 +3,7 @@ import { SingUpPatientService } from './../../sing-up-patient/sing-up-patient.se
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Patient } from 'src/app/patient';
 import { Component, OnInit } from '@angular/core';
+import { EditaccountService } from './editaccount.service';
 
 @Component({
   selector: 'app-editaccount',
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class EditaccountComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router) { }
+  constructor(private fb: FormBuilder, private editaccountservice: EditaccountService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -26,12 +27,13 @@ export class EditaccountComponent implements OnInit {
     })
   }
 
-  onClickSubmit(){
-    let patient:Patient = this.form.value;
-    patient.active=true;
-    this.SignupService.addpatient(patient).subscribe( data =>{
-        console.log(data);
-      }
+  onClickSubmit() {
+    let patient: Patient = this.form.value;
+    patient.id = 28;
+    this.editaccountservice.editaccount(patient).subscribe(data => {
+      patient == data;
+      console.log(data);
+    }
     )
     this.router.navigate(['patient'])
   }

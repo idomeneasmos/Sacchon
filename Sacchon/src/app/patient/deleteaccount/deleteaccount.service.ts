@@ -1,6 +1,6 @@
 import { Patient } from './../../patient';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,16 +10,18 @@ export class DeleteaccountService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:9000/v1'
+  private readonly baseUrl='http://localhost:9000/v1/patient'
+ 
+  deleteaccount(id: String){
+    return this.http.delete(this.baseUrl+'/'+id);
+  }
 
-
+/*
   deleteaccount():void{
-
-    this.http.delete<Patient>(
-      `${this.baseUrl}/patient`,
-      
+    this.http.delete(
+      `${this.baseUrl}/patient/8`
     )
 
   }
-
+*/
 }

@@ -1,5 +1,5 @@
 import { Patient } from 'src/app/patient';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
@@ -12,14 +12,14 @@ export class EditaccountService {
 
   constructor(private http: HttpClient) { }
 
-  private readonly baseUrl='http://localhost:9000/v1'
+  private readonly baseUrl='http://localhost:9000/v1/patient'
 
 
-  addpatient(patient:Patient):Observable<Patient>{
-    return this.http.put<Patient>(
-      `${this.baseUrl}/patient`,
+  editaccount(patient:Patient):Observable<Patient>{
+
+    return this.http.put<Patient>(this.baseUrl+'/'+patient.id ,
       patient
-    )
-
+      )
+      
   }
 }

@@ -17,7 +17,7 @@ export class AddmeasurementComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       glucoseLv: ["",],
-      carbIntake: ["",],
+      carbsIntake: ["",],
       date: ["",]
     })
   }
@@ -28,7 +28,7 @@ export class AddmeasurementComponent implements OnInit {
         console.log(data);
       }
     )
-    this.router.navigate(['/patient'])
+    this.router.navigate(['patient'])
 
   }
 
