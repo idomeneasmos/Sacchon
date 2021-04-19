@@ -1,6 +1,6 @@
-
+<button type="button" class="list-group-item list-group-item-action " (click)="getDoctor()">Get Doctors</button>
 <div id="listsContainer1">
-    <button type="button" class="list-group-item list-group-item-action " (click)="getDoctor()">Get Doctors</button>
+    
     <div class="list-group" *ngFor="let doc of doctors">
         
         <button type="button" class="list-group-item list-group-item-action" (click)="selectDoctor()">{{doc.fullName}}</button>

@@ -19,13 +19,13 @@ export class LogInComponent implements OnInit {
       email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required]
     })
-
   }
 
   logIn(){
     let email:string;
     let password:string;
     if(true){
+      
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials ", email + ":" + password);
