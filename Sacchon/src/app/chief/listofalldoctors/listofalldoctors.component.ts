@@ -1,3 +1,5 @@
+import { Doctor } from './../../doctor';
+import { ListofallldoctorsService } from './listofallldoctors.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListofalldoctorsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private listofalldoctors:ListofallldoctorsService) { }
 
+  doctors:Doctor[];
   ngOnInit(): void {
+  }
+
+  getDoctor(){
+    this.doctors=[];
+    this.listofalldoctors.getDoctors().subscribe(data=>{
+      this.doctors=data;
+    }
+
+    )
+
   }
 
   selectDoctor(): void {

@@ -1,3 +1,5 @@
+import { ListofallpatientsService } from './listofallpatients.service';
+import { Patient } from './../../patient';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListofallpatientsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private ListofallpatientsService:ListofallpatientsService, private router:Router) { }
+
+  patients:Patient[];
 
   ngOnInit(): void {
+  }
+
+  getPatients(){
+    this.patients=[];
+    this.ListofallpatientsService.getPatients().subscribe(data=>{
+      this.patients = data;
+    })
+
   }
 
   selectPatient(): void {

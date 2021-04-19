@@ -28,7 +28,7 @@ export class AddmeasurementComponent implements OnInit {
         console.log(data);
       }
     )
-    this.router.navigate(['patient'])
+    this.router.navigate(['/patient'])
 
   }
 

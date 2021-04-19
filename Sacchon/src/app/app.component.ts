@@ -32,10 +32,6 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isLogged = data;
     })
   }
-  myProfile(): Subscription{
-    return this.subscription;
-
-  }
 
   ngOnDestroy(): void {
     if (this.subscription) {

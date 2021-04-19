@@ -30,6 +30,7 @@ export class SingUpPatientComponent implements OnInit {
   onClickSubmit(){
     let patient:Patient = this.form.value;
     patient.active=true;
+
     this.SignupService.addpatient(patient).subscribe( data =>{
         console.log(data);
       }

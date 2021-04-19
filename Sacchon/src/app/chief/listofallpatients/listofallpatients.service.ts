@@ -6,20 +6,15 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DeleteaccountService {
-
-  constructor(private http: HttpClient) { }
+export class ListofallpatientsService {
 
   private readonly baseUrl='http://localhost:9000/v1'
+  constructor(private http:HttpClient) { }
 
-
-  deleteaccount():void{
-
-    this.http.delete<Patient>(
-      `${this.baseUrl}/patient`,
-      
+  getPatients():Observable<Patient[]>{
+    return this.http.get<Patient[]>(
+      `${this.baseUrl}/patient`
     )
-
   }
 
 }
