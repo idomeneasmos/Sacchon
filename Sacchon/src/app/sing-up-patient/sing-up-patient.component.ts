@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { Patient } from './../patient';
 import { from } from 'rxjs';
@@ -14,7 +15,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SingUpPatientComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router) { }
+  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router, private app:AppComponent) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -28,6 +29,7 @@ export class SingUpPatientComponent implements OnInit {
     })
   }
   onClickSubmit(){
+    this.app.setIsLogged();
     let patient:Patient = this.form.value;
     patient.active=true;
 
@@ -37,4 +39,5 @@ export class SingUpPatientComponent implements OnInit {
     )
     this.router.navigate(['patient'])
   }
+
 }

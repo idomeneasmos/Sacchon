@@ -1,3 +1,4 @@
+import { Login } from './login';
 import { Patient } from './../patient';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -16,11 +17,12 @@ export class LogInService {
 
   responseOfAuth = new Subject<boolean>();
 
-  authentication(values: any): Observable<Patient> {
+  authentication(values): Observable<any> {
     this.params.set('email', values.get('email').value);
     this.params.append('password', values.get('password').value);
+    this.responseOfAuth.next(true)
     return this.http.get<any>(
-      `${this.baseUrl}/patient`,
+      `${this.baseUrl}/patient/`,
       { params: this.params }
     )
 

@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { LogInService } from './log-in.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -12,7 +13,7 @@ import { first } from 'rxjs/operators';
 export class LogInComponent implements OnInit {
 
   form!:FormGroup;
-  constructor(private fb:FormBuilder, private LogInService:LogInService, private router:Router) { }
+  constructor(private fb:FormBuilder, private LogInService:LogInService, private router:Router, private app:AppComponent) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -21,15 +22,28 @@ export class LogInComponent implements OnInit {
     })
   }
 
+  isauth(response):boolean{
+    return true
+  }
+  kindofpage(values: any): String{
+
+    
+    return "";
+  }
+
   logIn(){
     let email:string;
     let password:string;
+    let response = this.LogInService.authentication(this.form.value);
+    let kindOfPage = this.kindofpage(response);
+    let id=19;
     if(true){
-      
+      this.app.setIsLogged();
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials ", email + ":" + password);
-      this.router.navigate(['patient'])
+      console.log(sessionStorage.getItem);
+      this.router.navigate([kindOfPage + `${id}`])
 
     }
     else{
