@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 import { SingUpPatientService } from './sing-up-patient.service';
 import { SingUpDoctorComponent } from './../sing-up-doctor/sing-up-doctor.component';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sing-up-patient',
@@ -15,13 +15,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class SingUpPatientComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router, private app:AppComponent) { }
+  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      fullName: ["",],
-      email: ["",],
-      password: ["",],
+      fullName: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", Validators.required],
       gender: ["",],
       dateOfBirth: ["",],
       weight: ["",],
@@ -29,7 +29,6 @@ export class SingUpPatientComponent implements OnInit {
     })
   }
   onClickSubmit(){
-    this.app.setIsLogged();
     let patient:Patient = this.form.value;
     patient.active=true;
 
@@ -37,7 +36,7 @@ export class SingUpPatientComponent implements OnInit {
         console.log(data);
       }
     )
-    this.router.navigate(['patient'])
+    this.router.navigate(['log-in'])
   }
 
 }

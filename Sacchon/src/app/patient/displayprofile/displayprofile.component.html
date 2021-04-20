@@ -10,7 +10,12 @@
                     <h6>{{Profile.height}} </h6>
                     <h6>{{Profile.weight}}</h6>
                     <h6>{{Profile.dateOfBirth}} </h6>
-                    <h6>{{Profile.gender}} </h6>
+                    <div *ngIf="!Profile.gender">
+                        <h6> Male</h6>
+                    </div>
+                    <div *ngIf="Profile.gender">
+                        <h6> Female</h6>
+                    </div>
                 </div>
             </div>
         </div>

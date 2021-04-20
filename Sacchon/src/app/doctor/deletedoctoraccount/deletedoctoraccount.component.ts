@@ -1,3 +1,4 @@
+import { AppComponent } from './../../app.component';
 import { Router } from '@angular/router';
 import { DeletedoctoraccountService } from './deletedoctoraccount.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeletedoctoraccountComponent implements OnInit {
 
-  constructor(private deleteaccount: DeletedoctoraccountService, private router: Router) { }
+  constructor(private deleteaccount: DeletedoctoraccountService, private router: Router, private app: AppComponent) { }
 
   account;
 
@@ -17,12 +18,12 @@ export class DeletedoctoraccountComponent implements OnInit {
   }
 
   deleteAccount() {
-    let id = '7';
+    let id = sessionStorage.getItem("id");
     this.deleteaccount.deleteaccount(id)
       .subscribe(data => {
         this.account = this.account.filter(item => item.id !== id)
       });
-    this.router.navigate(['home'])
+    this.app.logOut();
 
   }
 

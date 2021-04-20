@@ -29,7 +29,7 @@ export class EditaccountComponent implements OnInit {
 
   onClickSubmit() {
     let patient: Patient = this.form.value;
-    patient.id = 28;
+    patient.id = Number( sessionStorage.getItem("id"));
     this.editaccountservice.editaccount(patient).subscribe(data => {
       patient == data;
       console.log(data);

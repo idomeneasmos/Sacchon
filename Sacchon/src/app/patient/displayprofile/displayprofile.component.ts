@@ -22,7 +22,6 @@ export class DisplayprofileComponent implements OnInit {
   getProfile() {
     this.ProfileService.getprofile().subscribe(data => {
       this.Profile = data;
-      console.log(this.Profile);
     });
   }
 
