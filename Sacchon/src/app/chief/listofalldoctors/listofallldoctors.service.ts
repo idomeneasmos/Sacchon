@@ -1,6 +1,5 @@
 import { Doctor } from './../../doctor';
-import { Patient } from './../../patient';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -14,7 +13,8 @@ export class ListofallldoctorsService {
 
   getDoctors():Observable<Doctor[]>{
     return this.http.get<Doctor[]>(
-      `${this.baseUrl}/doctor`
+      `${this.baseUrl}/doctor`,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 

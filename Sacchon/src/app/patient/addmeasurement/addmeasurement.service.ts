@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Measurement } from './../../measurement';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,8 @@ export class AddmeasurementService {
   addMeasurement(measurement: Measurement): Observable<Measurement>{
     return this.http.post<Measurement>(
       `${this.baseUrl}/patientsData`,
-      measurement
+      measurement,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
   }

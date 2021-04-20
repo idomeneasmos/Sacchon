@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isLogged = data;
     })
   }
-
+  email= sessionStorage.getItem('email');
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();

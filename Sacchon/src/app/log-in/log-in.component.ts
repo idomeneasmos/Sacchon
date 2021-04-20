@@ -1,3 +1,5 @@
+import { Login } from './login';
+import { Observable } from 'rxjs';
 import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { LogInService } from './log-in.service';
@@ -12,8 +14,9 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class LogInComponent implements OnInit {
 
-  form!:FormGroup;
-  constructor(private fb:FormBuilder, private LogInService:LogInService, private router:Router, private app:AppComponent) { }
+  form!: FormGroup;
+  login: Login;
+  constructor(private fb: FormBuilder, private LogInService: LogInService, private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -23,35 +26,42 @@ export class LogInComponent implements OnInit {
     })
   }
 
-  account;
-
-  getId(): string{
-    let id: string;
-
-    let response = this.LogInService.authentication(this.form.get('kind').value , this.form).subscribe(data => {
-      this.account = this.account.filter(item => item.id !== id)
-    });
-    id="6";
-
-    return id;
+  isAuth(): boolean {
+    if (this.id != null) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
-  logIn(){
-    
-    let email:string;
-    let password:string;
-    let kind= this.form.get('kind').value;
-    let response = this.LogInService.authentication(kind , this.form);
+  id: number;
 
-   let id=this.getId();
-    if(true){
+  logIn() {
+
+    let email: string;
+    let password: string;
+    let kind = this.form.get('kind').value;
+    this.login.email = this.form.get('email').value;
+    this.login.password = this.form.get('password').value;
+    console.log(this.login.email);
+
+    //this.login = this.form.value;
+    this.LogInService.authentication(this.login)
+      .subscribe(data => {
+        this.id = data;
+        //alert(this.id);
+        console.log(data);
+      })
+    if (this.isAuth()) {
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials", email + ":" + password);
-      sessionStorage.setItem("id", id);
+      sessionStorage.setItem("email", email);
+      sessionStorage.setItem("id", String(this.id));
       this.router.navigate([kind])
     }
-    else{
+    else {
       alert("Wrong email or password");
     }
 

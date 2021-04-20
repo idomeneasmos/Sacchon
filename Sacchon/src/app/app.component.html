@@ -13,6 +13,7 @@
     </div>
     <div class="text-right">
         <form class="form-inline my-2 my-lg-0"  *ngIf="isLogged">
+            <div class="mo">{{email}}</div>
             <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
         </form>
     </div>
