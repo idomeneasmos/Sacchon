@@ -8,15 +8,25 @@
             <div class="col">
               <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #fullName
                 formControlName="fullName">
+                <div class="text-danger" *ngIf="form.get('fullName').hasError('required')">Your Full Name is
+              Required</div>
             </div>
+            
             <div class="col">
               <input type="text" class="form-control" id="email" placeholder="Enter email" #email
                 formControlName="email">
+                <div class="text-danger" *ngIf="form.get('email').hasError('required')">Email Required</div>
+          <div class="text-danger" *ngIf="form.get('email').hasError('email')">This isn't email</div>
+
             </div>
+            
             <div class="col">
               <input type="password" class="form-control" id="password" placeholder="Enter password" #password
                 formControlName="password">
+                <div class="text-danger" *ngIf="form.get('password').hasError('required')">Password
+              Required</div>
             </div>
+            
             <div class="col">
               <select class="form-control" id="gender" placeholder="Enter gender" #gender formControlName="gender">
                 <option value=false>Male</option>
@@ -41,7 +51,7 @@
           </div>
           <div class="row">
             <div class="col text-center">
-              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+              <button [disabled]='form.invalid' type="submit" class="btn btn-outline-secondary">Submit</button>
             </div>
           </div>
 

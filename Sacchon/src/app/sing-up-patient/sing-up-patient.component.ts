@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 import { SingUpPatientService } from './sing-up-patient.service';
 import { SingUpDoctorComponent } from './../sing-up-doctor/sing-up-doctor.component';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sing-up-patient',
@@ -19,9 +19,9 @@ export class SingUpPatientComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      fullName: ["",],
-      email: ["",],
-      password: ["",],
+      fullName: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", Validators.required],
       gender: ["",],
       dateOfBirth: ["",],
       weight: ["",],

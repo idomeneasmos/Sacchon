@@ -20,26 +20,49 @@ export class LogInService {
   responseOfAuth = new Subject<boolean>();
 
   authentication(kind: String, values: FormGroup): Observable<any> {
+    let id = sessionStorage.getItem("id");
     this.params.set('email', values.get('email').value);
     this.params.append('password', values.get('password').value);
     this.responseOfAuth.next(true)
     if (kind == "patient") {
       return this.http.get<Patient>(
-        `${this.baseUrl}/${kind}/`,
-        { params: this.params }
+        `${this.baseUrl}/${kind}/${id}`
       )
     }
     else if (kind == "doctor") {
       return this.http.get<Doctor>(
-        `${this.baseUrl}/${kind}/`,
-        { params: this.params }
+        `${this.baseUrl}/${kind}/${id}`
       )
     }
     else {
       return this.http.get<Chief>(
-        `${this.baseUrl}/${kind}/`,
-        { params: this.params }
+        `${this.baseUrl}/${kind}/${id}`
       )
     }
   }
+
+  getauth():Subject<boolean>{
+
+    return this.responseOfAuth;
+  }
+
+  getList(kind:String):Observable<any[]>{
+    if (kind == "patient") {
+      return this.http.get<Patient[]>(
+        `${this.baseUrl}/${kind}`
+      )
+    }
+    else if (kind == "doctor") {
+      return this.http.get<Doctor[]>(
+        `${this.baseUrl}/${kind}`
+      )
+    }
+    else {
+      return this.http.get<Chief[]>(
+        `${this.baseUrl}/${kind}`
+      )
+    }
+  }
+
 }
+

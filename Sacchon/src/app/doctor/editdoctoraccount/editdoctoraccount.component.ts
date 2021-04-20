@@ -28,7 +28,8 @@ export class EditdoctoraccountComponent implements OnInit {
 
   onClickSubmit() {
     let doctor: Doctor = this.form.value;
-    doctor.id=8;
+    doctor.id = Number(sessionStorage.getItem("id"));
+
     this.editdoctorsaccount.editdoctor(doctor).subscribe(data => {
       doctor == data;
     })
