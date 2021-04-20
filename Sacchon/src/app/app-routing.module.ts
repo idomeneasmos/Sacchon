@@ -1,3 +1,4 @@
+import { PatientmeasurementsComponent } from './patient/patientmeasurements/patientmeasurements.component';
 import { DeletedoctoraccountComponent } from './doctor/deletedoctoraccount/deletedoctoraccount.component';
 import { EditdoctoraccountComponent } from './doctor/editdoctoraccount/editdoctoraccount.component';
 import { DisplayDoctorProfileComponent } from './doctor/display-doctor-profile/display-doctor-profile.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'deleteAccount', component: DeleteaccountComponent},
   { path: 'displaydoctorprofile', component: DisplayDoctorProfileComponent},
   { path: 'editdoctoraccount', component: EditdoctoraccountComponent},
-  { path: 'deletedoctoraccount', component: DeletedoctoraccountComponent}
+  { path: 'deletedoctoraccount', component: DeletedoctoraccountComponent},
+  { path: 'patientmeasurements', component: PatientmeasurementsComponent}
 ];
 
 @NgModule({

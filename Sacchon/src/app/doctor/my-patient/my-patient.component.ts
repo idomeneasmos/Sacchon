@@ -3,6 +3,11 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, Label, ChartsModule } from 'ng2-charts';
 import { Router } from '@angular/router';
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-my-patient',
   templateUrl: './my-patient.component.html',
@@ -17,6 +22,16 @@ export class MyPatientComponent implements OnInit {
   addConsultation(): void {
     this.router.navigate(['newconsultation']);
   }
+
+  viewConsultation(): void {
+    
+  }
+
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   lineChartData: ChartDataSets[] = [
     { data: [85, 72, 78, 75, 77, 75], label: 'Blood Glucose Level' },

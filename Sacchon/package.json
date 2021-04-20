@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "@material/select": "^11.0.0",
     "angular-bootstrap-md": "^11.0.0",
     "bootstrap-darkmode": "^0.7.0",
     "bootstrap-table": "^1.18.3",
@@ -29,6 +30,7 @@
     "ng-bootstrap-darkmode": "^0.4.0",
     "ng-month-picker": "^1.1.5",
     "ng2-charts": "^2.4.2",
+    "ngx-mat-daterange-picker": "^1.1.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

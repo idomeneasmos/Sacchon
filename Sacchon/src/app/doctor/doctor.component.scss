@@ -6,20 +6,13 @@
     background-color: cadetblue;
   }
 button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    color: white;
-    background-color:lightsteelblue;
-    text-align: center;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 15px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease 0s;
-    cursor: pointer;
-    outline: none
+  color: white;
+  background-color:lightsteelblue;
+  text-align: center;
+  font-size: 18px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease 0s;
   }
 .row {
     margin-top: 40px;
@@ -41,8 +34,9 @@ h5, h6, h7 {
 }
 
 #listsContainer1, #listsContainer2{
-    height: 200px;
-    overflow:hidden
+  height: 250px;
+  overflow:hidden;
+  padding: 5px;
 }
 #listsContainer1:hover,  #listsContainer2:hover {
     overflow-y:auto;
@@ -50,3 +44,11 @@ h5, h6, h7 {
 #labelinfo1, #labelinfo2 {
     color: cadetblue;
   }
+
+  #card1{
+    background-color:#e0e0e0;
+    height: 600px;
+    shape-outside:inherit;
+  }
+
+  
