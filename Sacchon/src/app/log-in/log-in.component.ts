@@ -22,21 +22,18 @@ export class LogInComponent implements OnInit {
       kind: ["", Validators.required]
     })
   }
+
   account;
+
   getId(): string{
     let id: string;
 
     let response = this.LogInService.authentication(this.form.get('kind').value , this.form).subscribe(data => {
       this.account = this.account.filter(item => item.id !== id)
     });
-    id="16";
+    id="6";
 
     return id;
-
-  }
-
-  isauth(response):boolean{
-    return true;
   }
 
   logIn(){
@@ -46,15 +43,12 @@ export class LogInComponent implements OnInit {
     let kind= this.form.get('kind').value;
     let response = this.LogInService.authentication(kind , this.form);
 
-
    let id=this.getId();
-    if(this.LogInService.getauth()){
-      this.app.setIsLogged();
+    if(true){
       email = this.form.get('email').value;
       password = this.form.get('password').value;
-      sessionStorage.setItem("credentials ", email + ":" + password);
+      sessionStorage.setItem("credentials", email + ":" + password);
       sessionStorage.setItem("id", id);
-      console.log(sessionStorage.getItem("id"));
       this.router.navigate([kind])
     }
     else{

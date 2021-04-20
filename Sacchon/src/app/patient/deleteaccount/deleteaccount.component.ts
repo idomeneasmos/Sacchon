@@ -24,9 +24,9 @@ export class DeleteaccountComponent implements OnInit {
     this.deleteaccount.deleteaccount(id)
       .subscribe(data => {
         this.account = this.account.filter(item => item.id !== id)
-     });
-     this.app.deleteaccount();
-    this.router.navigate(['home'])
+      });
+    this.app.logOut();
+
 
   }
 

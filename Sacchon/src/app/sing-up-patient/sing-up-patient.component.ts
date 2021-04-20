@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SingUpPatientComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router, private app:AppComponent) { }
+  constructor(private fb: FormBuilder, private SignupService: SingUpPatientService,  private router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -29,7 +29,6 @@ export class SingUpPatientComponent implements OnInit {
     })
   }
   onClickSubmit(){
-    this.app.setIsLogged();
     let patient:Patient = this.form.value;
     patient.active=true;
 
@@ -37,7 +36,7 @@ export class SingUpPatientComponent implements OnInit {
         console.log(data);
       }
     )
-    this.router.navigate(['patient'])
+    this.router.navigate(['log-in'])
   }
 
 }

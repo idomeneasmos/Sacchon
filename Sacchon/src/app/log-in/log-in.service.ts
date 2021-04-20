@@ -26,43 +26,19 @@ export class LogInService {
     this.responseOfAuth.next(true)
     if (kind == "patient") {
       return this.http.get<Patient>(
-        `${this.baseUrl}/${kind}/${id}`
+        `${this.baseUrl}/${kind}/`
       )
     }
     else if (kind == "doctor") {
       return this.http.get<Doctor>(
-        `${this.baseUrl}/${kind}/${id}`
+        `${this.baseUrl}/${kind}/`
       )
     }
     else {
       return this.http.get<Chief>(
-        `${this.baseUrl}/${kind}/${id}`
+        `${this.baseUrl}/${kind}/`
       )
     }
   }
-
-  getauth():Subject<boolean>{
-
-    return this.responseOfAuth;
-  }
-
-  getList(kind:String):Observable<any[]>{
-    if (kind == "patient") {
-      return this.http.get<Patient[]>(
-        `${this.baseUrl}/${kind}`
-      )
-    }
-    else if (kind == "doctor") {
-      return this.http.get<Doctor[]>(
-        `${this.baseUrl}/${kind}`
-      )
-    }
-    else {
-      return this.http.get<Chief[]>(
-        `${this.baseUrl}/${kind}`
-      )
-    }
-  }
-
 }
 

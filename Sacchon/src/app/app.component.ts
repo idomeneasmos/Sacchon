@@ -39,13 +39,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  setIsLogged(){
-    this.isLogged = true;
-  }
-  deleteaccount(){
-    this.isLogged = false;
-  }
-
   logOut() {
     sessionStorage.removeItem("credentials");
     this.isLogged = false;

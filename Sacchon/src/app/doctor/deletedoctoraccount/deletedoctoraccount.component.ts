@@ -23,8 +23,7 @@ export class DeletedoctoraccountComponent implements OnInit {
       .subscribe(data => {
         this.account = this.account.filter(item => item.id !== id)
       });
-      this.app.deleteaccount();
-    this.router.navigate(['home'])
+    this.app.logOut();
 
   }
 

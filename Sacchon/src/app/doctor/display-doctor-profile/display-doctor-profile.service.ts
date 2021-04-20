@@ -15,8 +15,8 @@ export class DisplayDoctorProfileService {
   getprofile(): Observable<Doctor> {
     let id = sessionStorage.getItem("id");
     return this.http.get<Doctor>(
-      `${this.baseURL}/doctor/${id}`
-     // { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      `${this.baseURL}/doctor`,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
 
     )
 

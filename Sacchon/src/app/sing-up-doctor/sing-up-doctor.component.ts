@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class SingUpDoctorComponent implements OnInit {
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private SignupService: SingUpDoctorService,  private router:Router, private app:AppComponent) { }
+  constructor(private fb: FormBuilder, private SignupService: SingUpDoctorService,  private router:Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -26,7 +26,6 @@ export class SingUpDoctorComponent implements OnInit {
 
 
   onClickSubmit(){
-    this.app.setIsLogged();
     let doctor:Doctor = this.form.value;
     doctor.active=true;
     sessionStorage.setItem("id", "5");
@@ -34,7 +33,7 @@ export class SingUpDoctorComponent implements OnInit {
         console.log(data);
       }
     )
-    this.router.navigate(['doctor'])
+    this.router.navigate(['log-in'])
 
   }
 
