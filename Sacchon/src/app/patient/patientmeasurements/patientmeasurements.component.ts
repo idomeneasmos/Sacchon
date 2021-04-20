@@ -27,7 +27,7 @@ export class PatientmeasurementsComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: '#ef5350',
+      borderColor: '#f44336',
       backgroundColor: '#ffcdd2',
     },
   ];
@@ -48,8 +48,8 @@ export class PatientmeasurementsComponent implements OnInit {
 
   lineChartColors2: Color[] = [
     {
-      borderColor: '#4fc3f7',
-      backgroundColor : '#b3e5fc',
+      borderColor: '#ffeb3b',
+      backgroundColor : '#fff9c4',
     },
   ];
 
