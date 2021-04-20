@@ -26,17 +26,18 @@ export class LogInService {
     this.responseOfAuth.next(true)
     if (kind == "patient") {
       return this.http.get<Patient>(
-        `${this.baseUrl}/${kind}/`
+        `${this.baseUrl}/login/${kind}`
+        
       )
     }
     else if (kind == "doctor") {
       return this.http.get<Doctor>(
-        `${this.baseUrl}/${kind}/`
+        `${this.baseUrl}/login/${kind}`
       )
     }
     else {
       return this.http.get<Chief>(
-        `${this.baseUrl}/${kind}/`
+        `${this.baseUrl}/login/${kind}`
       )
     }
   }
