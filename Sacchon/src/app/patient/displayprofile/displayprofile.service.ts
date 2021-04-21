@@ -16,7 +16,7 @@ export class DisplayprofileService {
     let id = sessionStorage.getItem("id");
     return this.http.get<Patient>(
       `${this.baseURL}/patient/${id}`
-      //, { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      , { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
 
     )
 

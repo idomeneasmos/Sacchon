@@ -12,13 +12,21 @@
   <div class="col"><button id="calc1" type="button" class="btn" (click)="getAvgGlucose()"><i class="fa fa-calculator"></i>Calculate Average Glucose Level</button></div>
   <div class="col"><button id="calc2" type="button" class="btn" (click)="getAvgCarb()"><i class="fa fa-calculator"></i>Calculate Average Carbs Intake</button></div>
 </div>
-
-  <div class="col" *ngIf="getavgglucose"> 
-      Calculate Average Glucose Level: {{avggllv}}
+<div class="row">
+  <div class="col" > 
+      Calculate Average Glucose Level:
   </div>
+  <div class="col" > 
+    {{avggllv}}
+</div>
+</div>
 
-
-  <div class="col" *ngIf="getavgcarb">
-      Calculate Average Carbs Intake: {{avgcarb}}
+<div class="row">
+  <div class="col" > 
+    Calculate Average Carbs Intake:
   </div>
+  <div class="col" > 
+    {{avggllv}}
+</div>
+</div>
 

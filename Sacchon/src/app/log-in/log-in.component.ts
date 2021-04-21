@@ -15,7 +15,7 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class LogInComponent implements OnInit {
 
   form!: FormGroup;
-  login: Login;
+
   constructor(private fb: FormBuilder, private LogInService: LogInService, private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
@@ -26,15 +26,6 @@ export class LogInComponent implements OnInit {
     })
   }
 
-  isAuth(): boolean {
-    if (this.id != null) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
   id: number;
 
   logIn() {
@@ -42,18 +33,17 @@ export class LogInComponent implements OnInit {
     let email: string;
     let password: string;
     let kind = this.form.get('kind').value;
-    this.login.email = this.form.get('email').value;
-    this.login.password = this.form.get('password').value;
-    console.log(this.login.email);
-
-    //this.login = this.form.value;
-    this.LogInService.authentication(this.login)
+    let login: Login = {
+      email: this.form.get('email').value,
+      password: this.form.get('password').value
+    };
+    this.LogInService.authentication(login)
       .subscribe(data => {
         this.id = data;
-        //alert(this.id);
-        console.log(data);
-      })
-    if (this.isAuth()) {
+        console.log(this.id)
+      });
+    console.log(this.id);
+    if (this.id != null) {
       email = this.form.get('email').value;
       password = this.form.get('password').value;
       sessionStorage.setItem("credentials", email + ":" + password);
@@ -62,7 +52,7 @@ export class LogInComponent implements OnInit {
       this.router.navigate([kind])
     }
     else {
-      alert("Wrong email or password");
+      console.log("Wrong email or password");
     }
 
   }

@@ -14,12 +14,14 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'myapp';
   isLogged: boolean;
+  email= sessionStorage.getItem("email");
 
   subscription: Subscription;
 
-  constructor(private router: Router, private LogInService: LogInService) { }
+  constructor(private router: Router, private LogInService: LogInService) {sessionStorage.clear; }
 
   ngOnInit(): void {
+    
     if (sessionStorage.getItem("credentials") == null) {
       this.isLogged = false;
       this.router.navigate(['log-in'])
@@ -32,7 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
       this.isLogged = data;
     })
   }
-  email= sessionStorage.getItem('email');
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logOut() {
-    sessionStorage.removeItem("credentials");
+    sessionStorage.clear;
     this.isLogged = false;
     this.router.navigate(['log-in'])
 

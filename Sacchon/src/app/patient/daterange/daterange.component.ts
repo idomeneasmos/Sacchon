@@ -13,9 +13,13 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class DaterangeComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private daterangeservice:DaterangeService, private router:Router, private app:AppComponent) { }
+  constructor(private fb: FormBuilder, private daterangeservice: DaterangeService, private router: Router, private app: AppComponent) { }
 
-  form!:FormGroup;
+  form!: FormGroup;
+  getavgglucose = false;
+  getavgcarb = false;
+  avggllv: Number = 5;
+  avgcarb: Number = 18;
 
   ngOnInit(): void {
 
@@ -24,23 +28,25 @@ export class DaterangeComponent implements OnInit {
       to: ["", Validators.required]
     })
 
+
   }
 
 
-  getavgglucose=false;
-  getavgcarb=false;
-  avggllv=5;
-  avgcarb=18;
 
-  getAvgGlucose(): void{
-    this.getavgglucose=true;
-    console.log(this.avggllv);
+
+  getAvgGlucose(): void {
+    this.getavgglucose = true;
+    this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
+      this.avggllv=data;
+      console.log(this.avggllv)
+    })
+    console.log(this.getavgglucose);
   }
 
 
-  getAvgCarb(): void{
-    this.getavgcarb=true;
-    console.log(this.avgcarb);
+  getAvgCarb(): void {
+    this.getavgcarb = true;
+    console.log(this.getavgcarb);
   }
 
 }
