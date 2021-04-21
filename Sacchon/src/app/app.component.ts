@@ -17,41 +17,38 @@ export class AppComponent implements OnInit, OnDestroy {
   ispatient: boolean;
   isdoctor: boolean;
   ischief: boolean;
-  email:String;
+  email: String;
   kind: string;
   subscription: Subscription;
 
   constructor(private router: Router, private LogInService: LogInService) {
+
     //this.email= sessionStorage.getItem("email");
-   }
-   choosebuttons():void{
-    
-    if (this.kind=="patient"){
-      this.ispatient=true;
-      this.isdoctor=false;
-      this.ischief=false;
+  }
+  choosebuttons(): void {
+
+    if (this.kind == "patient") {
+      this.ispatient = true;
+      this.isdoctor = false;
+      this.ischief = false;
     }
-    else if (this.kind=="doctor"){
-      this.ispatient=false;
-      this.ischief=false;
-      this.isdoctor=true;
+    else if (this.kind == "doctor") {
+      this.ispatient = false;
+      this.ischief = false;
+      this.isdoctor = true;
     }
-    else if (this.kind=="chief"){
-      this.ispatient=false;
-      this.isdoctor=false;
-      this.ischief=true;
+    else if (this.kind == "chief") {
+      this.ispatient = false;
+      this.isdoctor = false;
+      this.ischief = true;
     }
-    else{
-      this.ispatient=false;
-      this.isdoctor=false;
-      this.ischief=false;
-    }
-   }
+  }
+
 
   ngOnInit(): void {
-    this.email= sessionStorage.getItem("email");
-    this.kind= sessionStorage.getItem("kind");
-    this.choosebuttons();
+    this.email = sessionStorage.getItem("email");
+    this.kind = sessionStorage.getItem("kind");
+    
 
     if (sessionStorage.getItem("credentials") == null) {
       this.isLogged = false;
@@ -72,8 +69,12 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logOut() {
-    sessionStorage.setItem("credentials",null);
+    this.ispatient = false;
+    this.isdoctor = false;
+    this.ischief = false;
+    sessionStorage.setItem("credentials", null);
     sessionStorage.setItem("email", "");
+    sessionStorage.setItem("kind", "");
     this.isLogged = false;
     this.router.navigate(['log-in'])
 

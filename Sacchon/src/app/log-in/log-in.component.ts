@@ -40,17 +40,18 @@ export class LogInComponent implements OnInit {
     this.LogInService.authentication(login)
       .subscribe(data => {
         this.id = data;
-        console.log(this.id)
         if (this.id != null) {
           email = this.form.get('email').value;
           password = this.form.get('password').value;
           sessionStorage.setItem("credentials", email + ":" + password);
           sessionStorage.setItem("email", email);
+          sessionStorage.setItem("kind", kind);
           sessionStorage.setItem("id", String(this.id));
+          this.app.choosebuttons();
           this.router.navigate([kind])
         }
         else {
-          console.log("Wrong email or password");
+          alert("Wrong email or password");
         }
       });
 
