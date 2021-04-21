@@ -18,7 +18,5 @@ export class AddmeasurementService {
       measurement,
       { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
-
   }
-  
 }

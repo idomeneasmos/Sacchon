@@ -34,12 +34,9 @@ export class AddmeasurementComponent implements OnInit {
 
       alert("Measurement added");
       console.log(this.form.get('date').value);
-      //this.router.navigate(['patientprofile/addmeasurement']);
     }
     else {
       alert("Please enter values for all fields!");
     }
-
   }
-
 }

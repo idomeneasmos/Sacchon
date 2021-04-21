@@ -1,7 +1,8 @@
+import { from } from 'rxjs';
 import { NewconsultationService } from './newconsultation.service';
 import { Component, OnInit } from '@angular/core';
-import { Newconsultation } from './newconsultation';
 import { Router } from '@angular/router';
+import { Newconsultation } from './newconsultation'
 
 
 @Component({
@@ -16,25 +17,20 @@ export class NewconsultationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addNewConsultation(consultation: string){
+  addNewConsultation(consultation: string) {
 
-    let newconsultation:Newconsultation = {
-
+    let newconsultation: Newconsultation = {
       description: consultation,
-      date: consultation.get('date').value,
+      date: new Date('2000-12-12'),
       doctorId: Number(sessionStorage.getItem('id')),
-      patientId: 1
+      patientId: Number(sessionStorage.getItem("patient_id_of_this_doctor")) //ayto einai to id pou fernei o idomeneas
+      
     }
-    console.log(measurement);
-    this.AddMeasurementService.addMeasurement(measurement).subscribe(data => { console.log(data)});
 
-    alert("Measurement added");
-    console.log(this.form.get('date').value);
-    //this.router.navigate(['patientprofile/addmeasurement']);
-  
+    console.log(newconsultation);
+    this.NewconsultationService.addConsultation(newconsultation).subscribe(data => { console.log(consultation)});
+
+    alert("Consultation added");
   }
-
-  
-    
-
 }
+
