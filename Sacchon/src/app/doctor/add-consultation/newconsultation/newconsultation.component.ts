@@ -3,7 +3,7 @@ import { NewconsultationService } from './newconsultation.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Newconsultation } from './newconsultation'
-
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-newconsultation',
@@ -21,7 +21,7 @@ export class NewconsultationComponent implements OnInit {
 
     let newconsultation: Newconsultation = {
       description: consultation,
-      date: new Date('2000-12-12'),
+      date: new Date(),
       doctorId: Number(sessionStorage.getItem('id')),
       patientId: Number(sessionStorage.getItem("patient_id_of_this_doctor")) //ayto einai to id pou fernei o idomeneas
       
