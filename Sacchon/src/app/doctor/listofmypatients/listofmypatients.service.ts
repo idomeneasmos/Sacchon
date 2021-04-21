@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Patient } from 'src/app/patient';
@@ -14,7 +14,8 @@ export class ListofmypatientsService {
 
   getlistofpatients(): Observable<Patient[]>{
     return this.http.get<Patient[]>(
-      `${this.baseUrl}/Listofmypatients`
+      `${this.baseUrl}/Listofmypatients`,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
   }

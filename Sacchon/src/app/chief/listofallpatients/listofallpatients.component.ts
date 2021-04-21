@@ -20,8 +20,9 @@ export class ListofallpatientsComponent implements OnInit {
   getPatients(){
     this.patients=[];
     this.ListofallpatientsService.getPatients().subscribe(data=>{
-      this.patients = data;
+      this.patients = data.data;
     })
+ 
 
   }
 

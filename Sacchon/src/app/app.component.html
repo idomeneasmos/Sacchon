@@ -4,27 +4,19 @@
         <nav>
             <a class="mo" routerLink="/home" routerLinkActive="active"><img
                     src="https://image.flaticon.com/icons/png/512/387/387595.png" width="50px" height="50px"><i class="fa fa-fw fa-home"></i> Home </a>
-            <a class="mo" routerLink="/log-in" routerLinkActive="active"><i class="fa fa-fw fa-user"></i>Log in</a>
-            <a class="mo" routerLink="/sing-up patient" routerLinkActive="active"><i class="fa fa-fw fa-user fa-lg"></i>Sign Up Patient</a>
-            <a class="mo" routerLink="/sing-up doctor" routerLinkActive="active"><i class="fa fa-fw fa-user-md fa-lg"></i>Sing up Doctor</a>
-            <a class="mo" routerLink="/doctor" routerLinkActive="active"><i class="fa fa-fw fa-user-md fa-lg"></i>Go to doctor</a>
-            <a class="mo" routerLink="/chiefDoctor" routerLinkActive="active"><i class="fa fa-fw fa-user-md fa-lg"></i>Go to chief doctor</a>
+            <a class="mo" routerLink="/log-in" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user"></i>Log in</a>
+            <a class="mo" routerLink="/sing-up patient" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user fa-lg"></i>Sign Up Patient</a>
+            <a class="mo" routerLink="/sing-up doctor" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user-md fa-lg"></i>Sing up Doctor</a>
+            <a class="mo" routerLink="/patient" routerLinkActive="active" *ngIf="ispatient"><i class="fa fa-fw fa-user-md fa-lg"></i>Patient</a>
+            <a class="mo" routerLink="/doctor" routerLinkActive="active" *ngIf="isdoctor"><i class="fa fa-fw fa-user-md fa-lg"></i>Doctor</a>
+            <a class="mo" routerLink="/chief" routerLinkActive="active" *ngIf="ischief"><i class="fa fa-fw fa-user-md fa-lg"></i>Chief</a>
         </nav>
     </div>
-    <div class="text-right">
-        <form class="form-inline my-2 my-lg-0"  *ngIf="isLogged">
+    <div class="text-right" *ngIf="isLogged">
+            <a class="mo">{{email}}</a>
             <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
-        </form>
     </div>
 </nav>
 
 
 <router-outlet></router-outlet>
-
-<!--
-<form class="form-inline" *ngIf="isLogged">
-    <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
-</form>
-
-
--->

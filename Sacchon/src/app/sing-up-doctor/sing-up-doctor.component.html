@@ -19,7 +19,7 @@
             <div class="text-danger" *ngIf="form.get('email').hasError('required')">Email Required</div>
             <div class="text-danger" *ngIf="form.get('email').hasError('email')">This isn't email</div>
             <div class="row">
-              <input type="text" class="form-control" id="password" placeholder="Enter password" #Password
+              <input type="password" class="form-control" id="password" placeholder="Enter password" #Password
                 formControlName="password">
             </div>
             <div class="text-danger" *ngIf="form.get('password').hasError('required')">Password

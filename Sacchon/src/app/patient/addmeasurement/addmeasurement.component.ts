@@ -25,6 +25,7 @@ export class AddmeasurementComponent implements OnInit {
     let measurement:Measurement = this.form.value;
     measurement.patientsId = Number(sessionStorage.getItem("id"));
     this.AddMeasurementService.addMeasurement(measurement).subscribe( data =>{
+      
         console.log(data);
       }
     )

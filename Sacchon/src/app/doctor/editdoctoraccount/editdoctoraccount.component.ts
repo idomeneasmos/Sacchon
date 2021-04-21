@@ -1,9 +1,9 @@
+import { DisplayDoctorProfileService } from './../display-doctor-profile/display-doctor-profile.service';
+import { Doctor } from './../../doctor';
 import { Router } from '@angular/router';
 import { EditdoctoraccountService } from './editdoctoraccount.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { SingUpDoctorService } from 'src/app/sing-up-doctor/sing-up-doctor.service';
-import { Doctor } from 'src/app/doctor';
 
 @Component({
   selector: 'app-editdoctoraccount',
@@ -14,7 +14,11 @@ export class EditdoctoraccountComponent implements OnInit {
 
 
   form!: FormGroup;
-  constructor(private fb: FormBuilder, private editdoctorsaccount: EditdoctoraccountService, private router: Router) { }
+  Profile: Doctor;
+  Doctor: Doctor;
+  constructor(private fb: FormBuilder,private displaydoctorsprofile:DisplayDoctorProfileService, private editdoctorsaccount: EditdoctoraccountService, private router: Router) {
+    this.getProfile();
+   }
 
 
   ngOnInit(): void {
@@ -25,13 +29,19 @@ export class EditdoctoraccountComponent implements OnInit {
       speciality: ["",]
     })
   }
+  
+  getProfile() {
+    this.displaydoctorsprofile.getprofile().subscribe(data => {
+      this.Profile = data;
+    });
+  }
 
   onClickSubmit() {
-    let doctor: Doctor = this.form.value;
-    doctor.id = Number(sessionStorage.getItem("id"));
+    this.Doctor = this.form.value;
+    this.Doctor.id = Number(sessionStorage.getItem("id"));
 
-    this.editdoctorsaccount.editdoctor(doctor).subscribe(data => {
-      doctor == data;
+    this.editdoctorsaccount.editdoctor(this.Doctor).subscribe(data => {
+      this.Doctor == data;
     })
     this.router.navigate(['doctor']);
   }

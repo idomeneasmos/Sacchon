@@ -28,7 +28,6 @@ export class SingUpDoctorComponent implements OnInit {
   onClickSubmit(){
     let doctor:Doctor = this.form.value;
     doctor.active=true;
-    sessionStorage.setItem("id", "5");
     this.SignupService.adddoctor(doctor).subscribe( data =>{
         console.log(data);
       }

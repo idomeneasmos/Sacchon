@@ -1,3 +1,5 @@
+import { Login } from './login';
+import { Observable } from 'rxjs';
 import { AppComponent } from './../app.component';
 import { Router } from '@angular/router';
 import { LogInService } from './log-in.service';
@@ -12,8 +14,9 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class LogInComponent implements OnInit {
 
-  form!:FormGroup;
-  constructor(private fb:FormBuilder, private LogInService:LogInService, private router:Router, private app:AppComponent) { }
+  form!: FormGroup;
+
+  constructor(private fb: FormBuilder, private LogInService: LogInService, private router: Router, private app: AppComponent) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -23,37 +26,36 @@ export class LogInComponent implements OnInit {
     })
   }
 
-  account;
+  id: number;
 
-  getId(): string{
-    let id: string;
+  logIn() {
 
-    let response = this.LogInService.authentication(this.form.get('kind').value , this.form).subscribe(data => {
-      this.account = this.account.filter(item => item.id !== id)
-    });
-    id="6";
+    let email: string;
+    let password: string;
+    let kind = this.form.get('kind').value;
+    let login: Login = {
+      email: this.form.get('email').value,
+      password: this.form.get('password').value
+    };
+    this.LogInService.authentication(login)
+      .subscribe(data => {
+        this.id = data;
+        if (this.id != null) {
+          email = this.form.get('email').value;
+          password = this.form.get('password').value;
+          sessionStorage.setItem("credentials", email + ":" + password);
+          sessionStorage.setItem("email", email);
+          sessionStorage.setItem("kind", kind);
+          sessionStorage.setItem("id", String(this.id));
+          this.app.choosebuttons();
+          this.router.navigate([kind])
+        }
+        else {
+          alert("Wrong email or password");
+        }
+      });
 
-    return id;
-  }
 
-  logIn(){
-    
-    let email:string;
-    let password:string;
-    let kind= this.form.get('kind').value;
-    let response = this.LogInService.authentication(kind , this.form);
-
-   let id=this.getId();
-    if(true){
-      email = this.form.get('email').value;
-      password = this.form.get('password').value;
-      sessionStorage.setItem("credentials", email + ":" + password);
-      sessionStorage.setItem("id", id);
-      this.router.navigate([kind])
-    }
-    else{
-      alert("Wrong email or password");
-    }
 
   }
 

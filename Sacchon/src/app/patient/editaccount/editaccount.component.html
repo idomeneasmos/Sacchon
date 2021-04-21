@@ -4,30 +4,30 @@
       <h5 class="titles"> Enter your information:</h5>
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname" #fullName
+          FullName:<input type="text" class="form-control" id="fullName" placeholder={{Profile.fullName}} #fullName
             formControlName="fullName">
         </div>
         <div class="col">
-          <input type="text" class="form-control" id="email" placeholder="Enter email" #email formControlName="email">
+          Email:<input type="text" class="form-control" id="email" placeholder={{Profile.email}} #email formControlName="email">
         </div>
         <div class="col">
-          <input type="password" class="form-control" id="password" placeholder="Enter password" #password
+          Password: <input type="password" class="form-control" id="password" placeholder={{Profile.password}} #password
             formControlName="password">
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <input type="number" class="form-control" id="weight" placeholder="Enter weight (Kg)" #weight
+          Weight: <input type="number" class="form-control" id="weight" placeholder={{Profile.weight}} #weight
             formControlName="weight">
         </div>
         <div class="col">
-          <input type="number" class="form-control" id="height" placeholder="Enter height (cm)" #height
+          Height: <input type="number" class="form-control" id="height" placeholder={{Profile.height}} #height
             formControlName="height">
         </div>
       </div>
       <div class="row">
         <div class="col text-center">
-          <button type="submit" class="btn btn-outline-secondary">Submit</button>
+          <button type="submit" class="btn btn-outline-secondary">Save</button>
         </div>
       </div>
 

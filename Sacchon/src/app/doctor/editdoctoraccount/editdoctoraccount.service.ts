@@ -1,6 +1,6 @@
 import { Doctor } from './../../doctor';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -17,7 +17,8 @@ export class EditdoctoraccountService {
 
   editdoctor(doctor:Doctor):Observable<Doctor>{
     return this.http.put<Doctor>(this.baseUrl+'/'+doctor.id ,
-      doctor
+      doctor,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 

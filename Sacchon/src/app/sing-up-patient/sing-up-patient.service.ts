@@ -15,7 +15,7 @@ export class SingUpPatientService {
 
   addpatient(patient:Patient):Observable<Patient>{
     return this.http.post<Patient>(
-      `${this.baseUrl}/patient`,
+      `${this.baseUrl}/RegisterPatientResource`,
       patient
     )
 

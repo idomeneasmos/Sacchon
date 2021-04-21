@@ -1,5 +1,9 @@
+import { DaterangeService } from './daterange.service';
+import { AppComponent } from './../../app.component';
+import { Router } from '@angular/router';
+import { LogInService } from './../../log-in/log-in.service';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,14 +13,42 @@ import {FormGroup, FormControl} from '@angular/forms';
 })
 export class DaterangeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private daterangeservice: DaterangeService, private router: Router, private app: AppComponent) { }
+
+  form!: FormGroup;
+  getavgglucose = false;
+  getavgcarb = false;
+  avggllv: Number;
+  avgcarb: Number;
 
   ngOnInit(): void {
+
+    this.form = this.fb.group({
+      from1: ["", [Validators.required, Validators.email]],
+      to: ["", Validators.required]
+    })
+
+
   }
 
-  range = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl()
-  });
+
+
+
+  getAvgGlucose(): void {
+    this.getavgglucose = true;
+    this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
+      this.avggllv=data;
+      console.log(this.avggllv)
+    })
+  }
+
+
+  getAvgCarb(): void {
+    this.getavgcarb = true;
+    this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
+      this.avgcarb=data;
+      console.log(this.avgcarb)
+    })
+  }
 
 }
