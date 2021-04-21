@@ -1,19 +1,11 @@
-<p>listofmeasurements works!</p>
 
-<div class="row">
-    <div *ngFor="let patient of Listofmypatients">
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-              Patients
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">{{patient.Id}}</li>
-              <li class="list-group-item">{{patient.Fullname}}</li>
-            </ul>
-          </div>
-
+<button type="button" class="list-group-item list-group-item-action " (click)="getmyPatients()">My Patients</button>
+<div id="listsContainer1">
+    
+    <div class="list-group" *ngFor="let pat of Listofmypatients">
+        
+        <button type="button" class="list-group-item list-group-item-action" (click)="selectPatient()">{{pat.fullName}}</button>
     </div>
-
 </div>
 
 <router-outlet></router-outlet>

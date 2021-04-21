@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ListofmypatientsService } from './listofmypatients.service';
 import { ListofmeasurementsService } from './../../patient/listofmeasurements/listofmeasurements.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,19 +11,24 @@ import { Patient } from 'src/app/patient';
 })
 export class ListofmypatientsComponent implements OnInit {
 
-  constructor(private ListofmyPatients: ListofmypatientsService) { }
+  constructor(private ListofmyPatients: ListofmypatientsService, private router:Router) { }
 
-  Listofmypatients: Patient[] = [];
+  Listofmypatients: Patient[];
 
   ngOnInit(): void {
   }
 
-  getListofmypatients(){
+  getmyPatients(){
     this.Listofmypatients = [];
-    this.ListofmyPatients.getlistofpatients().subscribe(data =>{
-      this.Listofmypatients = data;
-      console.log(this.ListofmyPatients);
+    let id=sessionStorage.getItem("id");
+    this.ListofmyPatients.getlistofpatients(id).subscribe(data =>{
+      this.Listofmypatients = data.data;
+      console.log(this.Listofmypatients);
     });
+  }
+
+  selectPatient(): void {
+    this.router.navigate(['my-patient']);
   }
 
 }

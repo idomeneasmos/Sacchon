@@ -1,3 +1,4 @@
+import { ApiResult } from 'src/app/api-result';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,9 +13,9 @@ export class ListoffreepatientsService {
 
   private readonly baseUrl='http://localhost:9000/v1'
 
-  getlistoffreepatients(): Observable<Patient[]>{
-    return this.http.get<Patient[]>(
-      `${this.baseUrl}/patient/1`,
+  getlistoffreepatients(): Observable<ApiResult<Patient[]>>{
+    return this.http.get<ApiResult<Patient[]>>(
+      `${this.baseUrl}/PatientWithNoCoResource`,
       { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
