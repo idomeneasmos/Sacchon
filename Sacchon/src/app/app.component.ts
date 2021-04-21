@@ -17,38 +17,21 @@ export class AppComponent implements OnInit, OnDestroy {
   ispatient: boolean;
   isdoctor: boolean;
   ischief: boolean;
-  email: String;
+  email: string;
   kind: string;
-  subscription: Subscription;
+  subscription: Subscription=new Subscription();
 
   constructor(private router: Router, private LogInService: LogInService) {
-
-    //this.email= sessionStorage.getItem("email");
-  }
-  choosebuttons(): void {
-
-    if (this.kind == "patient") {
-      this.ispatient = true;
-      this.isdoctor = false;
-      this.ischief = false;
-    }
-    else if (this.kind == "doctor") {
-      this.ispatient = false;
-      this.ischief = false;
-      this.isdoctor = true;
-    }
-    else if (this.kind == "chief") {
-      this.ispatient = false;
-      this.isdoctor = false;
-      this.ischief = true;
-    }
   }
 
+  goToProfile():void{
+    this.kind = sessionStorage.getItem("kind");
+    this.router.navigate([this.kind]);
+  }
 
   ngOnInit(): void {
     this.email = sessionStorage.getItem("email");
     this.kind = sessionStorage.getItem("kind");
-    
 
     if (sessionStorage.getItem("credentials") == null) {
       this.isLogged = false;
@@ -56,15 +39,22 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     else {
       this.isLogged = true;
-      this.router.navigate(['patient'])
+      this.router.navigate([this.kind])
     }
-    this.subscription = this.LogInService.responseOfAuth.subscribe(data => {
+    this.subscription.add(this.LogInService.responseOfAuth.subscribe(data => {
       this.isLogged = data;
-    })
+    }))
+    this.subscription.add(this.LogInService.responseoposthes.subscribe(data => {
+      this.email = sessionStorage.getItem("email");
+      this.kind = sessionStorage.getItem("kind");
+    }))
+
   }
+
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
+
     }
   }
 
@@ -72,9 +62,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.ispatient = false;
     this.isdoctor = false;
     this.ischief = false;
-    sessionStorage.setItem("credentials", null);
-    sessionStorage.setItem("email", "");
-    sessionStorage.setItem("kind", "");
+    sessionStorage.removeItem("credentials");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("kind");
     this.isLogged = false;
     this.router.navigate(['log-in'])
 

@@ -1,4 +1,5 @@
-import { ListofmypatientsService } from './../listofmypatients/listofmypatients.service';
+import { Router } from '@angular/router';
+import { ListoffreepatientsService } from './listoffreepatients.service';
 import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/app/patient';
 
@@ -9,19 +10,24 @@ import { Patient } from 'src/app/patient';
 })
 export class ListoffreepatientsComponent implements OnInit {
 
-  constructor(private listofFreePatients: ListofmypatientsService) { }
+  constructor(private listofFreePatients: ListoffreepatientsService, private router:Router) { }
 
-  ListofFreePatients: Patient[] =[] ;
+  ListofFreePatients: Patient[];
   ngOnInit(): void {
   }
 
   getListofFreePatients(){
     this.ListofFreePatients = [];
-    this.listofFreePatients.getlistofpatients().subscribe(data =>{
-      this.ListofFreePatients = data;
+
+    this.listofFreePatients.getlistoffreepatients().subscribe(data =>{
+      this.ListofFreePatients = data.data;
       console.log(this.listofFreePatients);
     });
 
+  }
+  selectPatient(pat:Patient): void {
+    sessionStorage.setItem("patient_id_of_this_doctor", String(pat.id));
+    this.router.navigate(['add-consultation']);
   }
 
 }

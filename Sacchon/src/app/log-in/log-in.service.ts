@@ -13,12 +13,17 @@ export class LogInService {
   constructor(private http: HttpClient) { }
 
   responseOfAuth = new Subject<boolean>();
+  responseoposthes = new Subject<boolean>();
 
   authentication(login: Login): Observable<number> {
-    this.responseOfAuth.next(true)
+    this.responseOfAuth.next(true);
     return this.http.post<number>(
       `${this.baseUrl}/login`,
       login
     )
+  }
+
+  oposthes(){
+    this.responseoposthes.next(true);
   }
 }

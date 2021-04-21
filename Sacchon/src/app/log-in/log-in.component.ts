@@ -46,8 +46,9 @@ export class LogInComponent implements OnInit {
           sessionStorage.setItem("credentials", email + ":" + password);
           sessionStorage.setItem("email", email);
           sessionStorage.setItem("kind", kind);
+          
           sessionStorage.setItem("id", String(this.id));
-          this.app.choosebuttons();
+          this.LogInService.oposthes();
           this.router.navigate([kind])
         }
         else {
