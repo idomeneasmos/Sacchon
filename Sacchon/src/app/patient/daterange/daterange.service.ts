@@ -21,7 +21,7 @@ export class DaterangeService {
     this.params.append('to', values.get('to').value);
     return this.http.get<Number>(
       `${this.baseURL}/PatientsDataGlucoseLv`
-      , { params: this.params, headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      , { params: this.params, headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
 
     )
 

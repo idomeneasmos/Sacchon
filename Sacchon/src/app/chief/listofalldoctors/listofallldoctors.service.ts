@@ -14,7 +14,7 @@ export class ListofallldoctorsService {
   getDoctors():Observable<Doctor[]>{
     return this.http.get<Doctor[]>(
       `${this.baseUrl}/doctor`,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 

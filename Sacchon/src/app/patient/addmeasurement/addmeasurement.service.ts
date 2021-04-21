@@ -16,7 +16,7 @@ export class AddmeasurementService {
     return this.http.post<Measurement>(
       `${this.baseUrl}/patientsData`,
       measurement,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
   }

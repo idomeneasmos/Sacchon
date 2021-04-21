@@ -1,32 +1,37 @@
 <div class="row">
-  <div class="col">
-    <label>From</label>
+
+  <form [formGroup]="form">
+    <div class="col">
+
+      <label>From</label>
       <input type="date" class="form-control" formControlName="from1">
+    </div>
+    <div class="col">
+      <label>To</label>
+      <input type="date" class="form-control" formControlName="to">
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col"><button id="calc1" type="button" class="btn" (click)="getAvgGlucose()"><i
+        class="fa fa-calculator"></i>Calculate Average Glucose Level</button></div>
+  <div class="col"><button id="calc2" type="button" class="btn" (click)="getAvgCarb()"><i
+        class="fa fa-calculator"></i>Calculate Average Carbs Intake</button></div>
+</div>
+<div class="row">
+  <div class="col">
+    Calculate Average Glucose Level:
   </div>
   <div class="col">
-    <label>To</label>
-      <input type="date" class="form-control" formControlName="to">
-  </div>
-</div>
-<div class="row">
-  <div class="col"><button id="calc1" type="button" class="btn" (click)="getAvgGlucose()"><i class="fa fa-calculator"></i>Calculate Average Glucose Level</button></div>
-  <div class="col"><button id="calc2" type="button" class="btn" (click)="getAvgCarb()"><i class="fa fa-calculator"></i>Calculate Average Carbs Intake</button></div>
-</div>
-<div class="row">
-  <div class="col" > 
-      Calculate Average Glucose Level:
-  </div>
-  <div class="col" > 
     {{avggllv}}
-</div>
+  </div>
 </div>
 
 <div class="row">
-  <div class="col" > 
+  <div class="col">
     Calculate Average Carbs Intake:
   </div>
-  <div class="col" > 
+  <div class="col">
     {{avggllv}}
+  </div>
 </div>
-</div>
-

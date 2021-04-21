@@ -16,7 +16,7 @@ export class DisplayDoctorProfileService {
     let id = sessionStorage.getItem("id");
     return this.http.get<Doctor>(
       `${this.baseURL}/doctor/${id}`,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
 
     )
 

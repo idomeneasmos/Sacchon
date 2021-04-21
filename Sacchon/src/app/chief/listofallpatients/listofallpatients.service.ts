@@ -15,7 +15,7 @@ export class ListofallpatientsService {
     return this.http.get<Patient[]>(
       `${this.baseUrl}/patient`,
       
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 

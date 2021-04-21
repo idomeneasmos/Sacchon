@@ -14,7 +14,7 @@ export class DeleteaccountService {
  
   deleteaccount(id: String){
     return this.http.delete(this.baseUrl+'/'+id,
-    { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+    { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     );
   }
 

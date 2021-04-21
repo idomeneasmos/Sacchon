@@ -15,7 +15,8 @@ export class ListofmeasurementsService {
 
   getlistofmeasurements(): Observable<Measurement[]>{
     return this.http.get<Measurement[]>(
-      `${this.baseUrl}/listofmeasurements`
+      `${this.baseUrl}/listofmeasurements`,
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
   }

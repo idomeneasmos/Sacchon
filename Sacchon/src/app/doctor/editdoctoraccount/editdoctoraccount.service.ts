@@ -18,7 +18,7 @@ export class EditdoctoraccountService {
   editdoctor(doctor:Doctor):Observable<Doctor>{
     return this.http.put<Doctor>(this.baseUrl+'/'+doctor.id ,
       doctor,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 

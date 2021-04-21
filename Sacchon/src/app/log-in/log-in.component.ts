@@ -41,19 +41,20 @@ export class LogInComponent implements OnInit {
       .subscribe(data => {
         this.id = data;
         console.log(this.id)
+        if (this.id != null) {
+          email = this.form.get('email').value;
+          password = this.form.get('password').value;
+          sessionStorage.setItem("credentials", email + ":" + password);
+          sessionStorage.setItem("email", email);
+          sessionStorage.setItem("id", String(this.id));
+          this.router.navigate([kind])
+        }
+        else {
+          console.log("Wrong email or password");
+        }
       });
-    console.log(this.id);
-    if (this.id != null) {
-      email = this.form.get('email').value;
-      password = this.form.get('password').value;
-      sessionStorage.setItem("credentials", email + ":" + password);
-      sessionStorage.setItem("email", email);
-      sessionStorage.setItem("id", String(this.id));
-      this.router.navigate([kind])
-    }
-    else {
-      console.log("Wrong email or password");
-    }
+
+
 
   }
 

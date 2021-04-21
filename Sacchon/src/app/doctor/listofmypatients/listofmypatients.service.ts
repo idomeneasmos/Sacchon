@@ -15,7 +15,7 @@ export class ListofmypatientsService {
   getlistofpatients(): Observable<Patient[]>{
     return this.http.get<Patient[]>(
       `${this.baseUrl}/Listofmypatients`,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic' + btoa(sessionStorage.getItem("credentials")) }) }
+      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
 
   }
