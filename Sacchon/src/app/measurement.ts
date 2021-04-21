@@ -1,7 +1,7 @@
 export interface Measurement {
-    id : number;
-    patientsId : number;
+    patientId : number;
     glucoseLv : number;
     carbsIntake : number;
     date: Date;
+    
 }

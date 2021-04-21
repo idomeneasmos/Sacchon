@@ -14,3 +14,14 @@
   label {
       font-style: italic;
   }
+  button {
+    border: none;
+    color: white;
+    background-color:lightsteelblue;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease 0s;
+  }
+  #calc1, #calc2{
+    margin: 0 auto;
+  }

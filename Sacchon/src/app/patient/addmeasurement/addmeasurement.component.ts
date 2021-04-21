@@ -3,7 +3,7 @@ import { Measurement } from './../../measurement';
 import { AddmeasurementService } from './addmeasurement.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
+import { DatePipe, formatDate } from '@angular/common';
 @Component({
   selector: 'app-addmeasurement',
   templateUrl: './addmeasurement.component.html',
@@ -22,14 +22,23 @@ export class AddmeasurementComponent implements OnInit {
     })
   }
   onClickSubmit(){
-    let measurement:Measurement = this.form.value;
-    measurement.patientsId = Number(sessionStorage.getItem("id"));
-    this.AddMeasurementService.addMeasurement(measurement).subscribe( data =>{
-      
-        console.log(data);
+    if(this.form.valid) {
+      let measurement:Measurement = {
+        glucoseLv: this.form.get('glucoseLv').value,
+        carbsIntake: this.form.get('carbsIntake').value,
+        date: this.form.get('date').value,
+        patientId: Number(sessionStorage.getItem('id'))
       }
-    )
-    this.router.navigate(['patient'])
+      console.log(measurement);
+      this.AddMeasurementService.addMeasurement(measurement).subscribe(data => { console.log(data)});
+
+      alert("Measurement added");
+      console.log(this.form.get('date').value);
+      //this.router.navigate(['patientprofile/addmeasurement']);
+    }
+    else {
+      alert("Please enter values for all fields!");
+    }
 
   }
 
