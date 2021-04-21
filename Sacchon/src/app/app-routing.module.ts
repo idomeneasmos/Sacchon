@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'displayprofile', component: DisplayprofileComponent },
   { path: 'newconsultation', component: NewconsultationComponent },
   { path: 'my-patient', component: MyPatientComponent },
-  { path: 'chiefDoctor', component: ChiefComponent },
+  { path: 'chief', component: ChiefComponent },
   { path: 'doctorProfile', component: DoctorprofileComponent},
   { path: 'editAccount', component: EditaccountComponent},
   { path: 'deleteAccount', component: DeleteaccountComponent},

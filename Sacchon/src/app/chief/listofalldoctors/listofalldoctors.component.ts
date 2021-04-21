@@ -19,10 +19,8 @@ export class ListofalldoctorsComponent implements OnInit {
   getDoctor(){
     this.doctors=[];
     this.listofalldoctors.getDoctors().subscribe(data=>{
-      this.doctors=data;
-    }
-
-    )
+      this.doctors=data.data;
+    })
 
   }
 

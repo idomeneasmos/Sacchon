@@ -18,8 +18,8 @@ export class DaterangeComponent implements OnInit {
   form!: FormGroup;
   getavgglucose = false;
   getavgcarb = false;
-  avggllv: Number = 5;
-  avgcarb: Number = 18;
+  avggllv: Number;
+  avgcarb: Number;
 
   ngOnInit(): void {
 
@@ -40,13 +40,15 @@ export class DaterangeComponent implements OnInit {
       this.avggllv=data;
       console.log(this.avggllv)
     })
-    console.log(this.getavgglucose);
   }
 
 
   getAvgCarb(): void {
     this.getavgcarb = true;
-    console.log(this.getavgcarb);
+    this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
+      this.avgcarb=data;
+      console.log(this.avgcarb)
+    })
   }
 
 }

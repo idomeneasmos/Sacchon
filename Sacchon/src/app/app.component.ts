@@ -14,14 +14,45 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'myapp';
   isLogged: boolean;
-  email= sessionStorage.getItem("email");
-
+  ispatient: boolean;
+  isdoctor: boolean;
+  ischief: boolean;
+  email:String;
+  kind: string;
   subscription: Subscription;
 
-  constructor(private router: Router, private LogInService: LogInService) {sessionStorage.clear; }
+  constructor(private router: Router, private LogInService: LogInService) {
+    //this.email= sessionStorage.getItem("email");
+   }
+   choosebuttons():void{
+    
+    if (this.kind=="patient"){
+      this.ispatient=true;
+      this.isdoctor=false;
+      this.ischief=false;
+    }
+    else if (this.kind=="doctor"){
+      this.ispatient=false;
+      this.ischief=false;
+      this.isdoctor=true;
+    }
+    else if (this.kind=="chief"){
+      this.ispatient=false;
+      this.isdoctor=false;
+      this.ischief=true;
+    }
+    else{
+      this.ispatient=false;
+      this.isdoctor=false;
+      this.ischief=false;
+    }
+   }
 
   ngOnInit(): void {
-    
+    this.email= sessionStorage.getItem("email");
+    this.kind= sessionStorage.getItem("kind");
+    this.choosebuttons();
+
     if (sessionStorage.getItem("credentials") == null) {
       this.isLogged = false;
       this.router.navigate(['log-in'])
@@ -41,7 +72,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logOut() {
-    sessionStorage.clear;
+    sessionStorage.setItem("credentials",null);
+    sessionStorage.setItem("email", "");
     this.isLogged = false;
     this.router.navigate(['log-in'])
 
