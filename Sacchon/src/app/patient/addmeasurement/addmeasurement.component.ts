@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Measurement } from './../../measurement';
 import { AddmeasurementService } from './addmeasurement.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe, formatDate } from '@angular/common';
 @Component({
   selector: 'app-addmeasurement',
@@ -16,9 +16,9 @@ export class AddmeasurementComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      glucoseLv: ["",],
-      carbsIntake: ["",],
-      date: ["",]
+      glucoseLv: ["", Validators.required],
+      carbsIntake: ["", Validators.required],
+      date: ["", Validators.required]
     })
   }
   onClickSubmit(){
@@ -31,9 +31,8 @@ export class AddmeasurementComponent implements OnInit {
       }
       console.log(measurement);
       this.AddMeasurementService.addMeasurement(measurement).subscribe(data => { console.log(data)});
-
-      alert("Measurement added");
-      console.log(this.form.get('date').value);
+      
+      this.router.navigate(['patient']);
     }
     else {
       alert("Please enter values for all fields!");

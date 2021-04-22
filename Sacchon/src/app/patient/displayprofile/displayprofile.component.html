@@ -7,8 +7,8 @@
                 <div class="user-profile" >
                     <h5 style="font-style: italic;">{{Profile?.fullName}}</h5>
                     <h6>{{Profile?.email}}</h6>
-                    <h6>{{Profile?.height}} </h6>
-                    <h6>{{Profile?.weight}}</h6>
+                    <h6>Height: {{Profile?.height}}m</h6>
+                    <h6>Weight: {{Profile?.weight}}kg</h6>
                 
                     <div *ngIf="!Profile?.gender">
                         <h6> Male</h6>

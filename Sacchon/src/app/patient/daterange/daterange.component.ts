@@ -24,31 +24,28 @@ export class DaterangeComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      from1: ["", [Validators.required, Validators.email]],
+      from1: ["", Validators.required],
       to: ["", Validators.required]
     })
 
 
   }
 
-
-
-
   getAvgGlucose(): void {
     this.getavgglucose = true;
     this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
-      this.avggllv=data;
-      console.log(this.avggllv)
+      this.avggllv=data.data;
     })
   }
 
 
   getAvgCarb(): void {
     this.getavgcarb = true;
-    this.daterangeservice.getAvgGlucose(this.form).subscribe(data=>{
-      this.avgcarb=data;
-      console.log(this.avgcarb)
+    this.daterangeservice.getAvgCarbsIntake(this.form).subscribe(data=>{
+      this.avgcarb=data.data;
     })
   }
+
+
 
 }

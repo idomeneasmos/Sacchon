@@ -1,7 +1,8 @@
+import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ApiResult } from './../../api-result';
 import { Patient } from './../../patient';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,10 +14,13 @@ export class ListofinactivepatientsService {
   
   constructor(private http:HttpClient) { }
 
-  getinactivePatients():Observable<ApiResult<Patient[]>>{
+  getinactivePatients(values: FormGroup):Observable<ApiResult<Patient[]>>{
+    let params = new HttpParams()
+      .set("from1", values.get('from1').value)
+      .set("to", values.get('to').value);
     return this.http.get<ApiResult<Patient[]>>(
-      `${this.baseUrl}/InactivePatientResource`,
-      { headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
+      `${this.baseUrl}/InactivePatientResource`
+      , { params: params, headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 }

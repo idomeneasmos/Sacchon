@@ -1,9 +1,25 @@
-<button type="button" class="list-group-item list-group-item-action " (click)="getinactivePatients()">Inactive Patients</button>
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col">
+
+            <label>From</label>
+            <input type="date" class="form-control" formControlName="from1">
+        </div>
+        <div class="col">
+            <label>To</label>
+            <input type="date" class="form-control" formControlName="to">
+        </div>
+    </div>
+</form>
+
+<button type="button" class="list-group-item list-group-item-action " (click)="getinactivePatients()">Inactive
+    Patients</button>
 <div id="listsContainer1">
-    
+
     <div class="list-group" *ngFor="let pat of patients">
-        
-        <button type="button" class="list-group-item list-group-item-action" (click)="selectPatient()">{{pat.fullName}}</button>
+
+        <button type="button" class="list-group-item list-group-item-action"
+            (click)="selectPatient()">{{pat.fullName}}</button>
     </div>
 </div>
 <router-outlet></router-outlet>
