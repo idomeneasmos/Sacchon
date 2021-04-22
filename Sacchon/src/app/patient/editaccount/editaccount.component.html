@@ -1,36 +1,40 @@
-<div class="info-form" class="center">
-  <div class="row">
-    <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
-      <h5 class="titles"> Enter your information:</h5>
+<div class="container" style="margin-top: 3%;">
+  <div id="card1" class="card" class="shadow-lg p-3 mb-5 bg-light rounded">
+    <h2>Edit your information</h2>
+    <div class="info-form" class="center">
       <div class="row">
-        <div class="col">
-          FullName:<input type="text" class="form-control" id="fullName" placeholder={{Profile.fullName}} #fullName
-            formControlName="fullName">
-        </div>
-        <div class="col">
-          Email:<input type="text" class="form-control" id="email" placeholder={{Profile.email}} #email formControlName="email">
-        </div>
-        <div class="col">
-          Password: <input type="password" class="form-control" id="password" placeholder={{Profile.password}} #password
-            formControlName="password">
-        </div>
+        <form [formGroup]="form" (ngSubmit)="onClickSubmit()">
+          <div class="row">
+            <div class="col">
+              FullName:<input type="text" class="form-control" id="fullName" placeholder={{Profile.fullName}} #fullName
+                formControlName="fullName">
+            </div>
+            <div class="col">
+              Email:<input type="text" class="form-control" id="email" placeholder={{Profile.email}} #email
+                formControlName="email">
+            </div>
+            <div class="col">
+              Password: <input type="password" class="form-control" id="password" placeholder={{Profile.password}}
+                #password formControlName="password">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              Weight: <input type="number" class="form-control" id="weight" placeholder={{Profile.weight}} #weight
+                formControlName="weight">
+            </div>
+            <div class="col">
+              Height: <input type="number" class="form-control" id="height" placeholder={{Profile.height}} #height
+                formControlName="height">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-outline-secondary">Save</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="row">
-        <div class="col">
-          Weight: <input type="number" class="form-control" id="weight" placeholder={{Profile.weight}} #weight
-            formControlName="weight">
-        </div>
-        <div class="col">
-          Height: <input type="number" class="form-control" id="height" placeholder={{Profile.height}} #height
-            formControlName="height">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          <button type="submit" class="btn btn-outline-secondary">Save</button>
-        </div>
-      </div>
-
-    </form>
+    </div>
   </div>
 </div>

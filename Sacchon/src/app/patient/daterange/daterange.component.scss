@@ -3,7 +3,6 @@
     border:none;
     box-shadow: 5px 10px 15px rgba(9, 85, 75, 0.11);
   }
-
   .row {
     margin-top: 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,6 +25,23 @@
     margin: 0 auto;
   }
 
-  #avgGl{
-    background-color: aqua;
+  #avgGl, #avgCarb{
+    border-style: dotted;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: cadetblue;
+    margin: 2px;
+  }
+  #listsContainer1{
+    height: 250px;
+    overflow:hidden;
+    padding: 5px;
+  }
+  #listsContainer1:hover {
+    overflow-y:auto;
+  }
+
+  #list1 {
+    background-color: white;
+    color: black;
   }

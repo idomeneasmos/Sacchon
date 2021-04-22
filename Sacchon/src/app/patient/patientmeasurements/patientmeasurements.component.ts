@@ -19,7 +19,7 @@ export class PatientmeasurementsComponent implements OnInit {
     { data: [85, 72, 78, 75, 77, 75], label: 'Blood Glucose Level' },
   ];
 
-  lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June'];
+  lineChartLabels: Label[] = ['11/5/2020', '12/5/2020', '13/5/2020', '14/5/2020', '15/5/2020', '15/5/2020'];
 
   lineChartOptions = {
     responsive: true, 
@@ -27,8 +27,8 @@ export class PatientmeasurementsComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      borderColor: '#f44336',
-      backgroundColor: '#ffcdd2',
+      borderColor: '#6ff9ff',
+      backgroundColor: '#f44336',
     },
   ];
 
@@ -40,7 +40,7 @@ export class PatientmeasurementsComponent implements OnInit {
     { data: [85, 72, 78, 75, 77, 75], label: 'Carbohydrates' },
   ];
 
-  lineChartLabels2: Label[] = ['January', 'February', 'March', 'April', 'May', 'June'];
+  lineChartLabels2: Label[] = ['11/5/2020', '12/5/2020', '13/5/2020', '14/5/2020', '15/5/2020', '15/5/2020'];
 
   lineChartOptions2 = {
     responsive: true, 
@@ -48,8 +48,8 @@ export class PatientmeasurementsComponent implements OnInit {
 
   lineChartColors2: Color[] = [
     {
-      borderColor: '#ffeb3b',
-      backgroundColor : '#fff9c4',
+      borderColor: '#6ff9ff',
+      backgroundColor : '#fdd835',
     },
   ];
 

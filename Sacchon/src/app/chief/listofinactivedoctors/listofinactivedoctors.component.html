@@ -1,7 +1,6 @@
-<form [formGroup]="form">
+<form [formGroup]="form"> 
     <div class="row">
         <div class="col">
-
             <label>From</label>
             <input type="date" class="form-control" formControlName="from1">
         </div>
@@ -15,9 +14,7 @@
 
 <button type="button" class="list-group-item list-group-item-action " (click)="getInactiveDoctors()">Inactive Doctors</button>
 <div id="listsContainer1">
-    
     <div class="list-group" *ngFor="let doc of doctors">
-        
         <button type="button" class="list-group-item list-group-item-action" (click)="selectDoctor()">{{doc.fullName}}</button>
     </div>
 </div>

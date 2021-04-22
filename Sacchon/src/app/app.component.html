@@ -7,8 +7,7 @@
             <a class="mo" routerLink="/log-in" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user"></i>Log in</a>
             <a class="mo" routerLink="/sing-up patient" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user fa-lg"></i>Sign Up Patient</a>
             <a class="mo" routerLink="/sing-up doctor" routerLinkActive="active" *ngIf="!isLogged"><i class="fa fa-fw fa-user-md fa-lg"></i>Sing up Doctor</a>
-            <button class="mo" *ngIf="isLogged" (click)="goToProfile()"><i class="fa fa-fw fa-user-md fa-lg"></i>Profile</button>
-
+            <button type = "button" class="mo" class="btn" *ngIf="isLogged" (click)="goToProfile()"> <i class="fa fa-fw fa-user-md fa-lg"></i> Profile</button>
         </nav>
     </div>
     <div class="text-right" *ngIf="isLogged">
@@ -16,6 +15,4 @@
             <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logOut()">Log Out</button>
     </div>
 </nav>
-
-
 <router-outlet></router-outlet>

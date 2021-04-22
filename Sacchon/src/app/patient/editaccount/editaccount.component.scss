@@ -8,8 +8,9 @@
   
   .form-control {
     text-align: center;
-    width: 300px;
-    margin: 10px;
+    border:none;
+    box-shadow: 5px 10px 15px rgba(126, 125, 125, 0.11);
+    margin: 15px;
   }
   .titles {
     color: cadetblue;
@@ -34,4 +35,14 @@
   }
   .row {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  #card1{
+    background-color:#e0e0e0;
+    height: 600px;
+    shape-outside:inherit;
+    text-align: center;
+  }
+  h2, h6 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
   }

@@ -42,6 +42,10 @@ h4, h6, h7 {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
 }
+h2 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
 #labelinfo1, #labelinfo2 {
   color: cadetblue;
   text-align: center;
@@ -50,7 +54,7 @@ h4, h6, h7 {
 
 #card1{
   background-color:#e0e0e0;
-  height: 500px;
+  height: 700px;
   shape-outside:inherit;
   text-align: center;
 }

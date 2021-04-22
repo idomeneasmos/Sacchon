@@ -1,7 +1,6 @@
 <form [formGroup]="form">
   <div class="row">
     <div class="col">
-
       <label>From</label>
       <input type="date" class="form-control" formControlName="from1">
     </div>
@@ -20,14 +19,14 @@
 </div>
 <div class="row">
   <div id="avgGl" class="col">
-    Calculate Average Glucose Level:
+    Avg Glucose Level:
     <div *ngIf="getavgglucose">
       {{this.avggllv}}
     </div>
   </div>
 
   <div id="avgCarb" class="col">
-    Calculate Average Carbs Intake:
+    Avg Carbs Intake:
     <div *ngIf="getavgcarb">
       {{this.avgcarb}}
     </div>
@@ -35,30 +34,28 @@
 
 </div>
 
-<div class="row">
-  <form [formGroup]="form1">
-    <div class="row">
-      <div class="col">
-        <label>From</label>
-        <input type="date" class="form-control" formControlName="from1">
-      </div>
-      <div class="col">
-        <label>To</label>
-        <input type="date" class="form-control" formControlName="to">
-      </div>
+<form [formGroup]="form1">
+  <div class="row">
+    <div class="col">
+      <label>From</label>
+      <input type="date" class="form-control" formControlName="from1">
     </div>
-  </form>
-  <button type="button" class="list-group-item list-group-item-action " (click)="getmyConsultation()">My
-    Consultations</button>
-  <div id="listsContainer1">
-
-    <div class="list-group" *ngFor="let con of getconsult">
-      <ul>
-        <div class="col">{{con.description}}</div>
-      </ul>
-
-
+    <div class="col">
+      <label>To</label>
+      <input type="date" class="form-control" formControlName="to">
     </div>
   </div>
 
+<div class="row">
+  <button type="button" class="list-group-item list-group-item-action " (click)="getmyConsultation()">
+    My Consultations
+  </button>
 </div>
+<div id="listsContainer1">
+  <div class="list-group" *ngFor="let con of getconsult">
+    <ul>
+      <div class="col"><button type="button" class="list-group-item list-group-item-action" id="list1">{{con.description}}</button></div>
+    </ul>
+  </div>
+</div>
+</form>
