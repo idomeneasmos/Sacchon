@@ -1,3 +1,4 @@
+import { Newconsultation } from './../../doctor/add-consultation/newconsultation/newconsultation';
 import { DaterangeService } from './daterange.service';
 import { AppComponent } from './../../app.component';
 import { Router } from '@angular/router';
@@ -16,10 +17,12 @@ export class DaterangeComponent implements OnInit {
   constructor(private fb: FormBuilder, private daterangeservice: DaterangeService, private router: Router, private app: AppComponent) { }
 
   form!: FormGroup;
+  form1!: FormGroup;
   getavgglucose = false;
   getavgcarb = false;
   avggllv: Number;
   avgcarb: Number;
+  getconsult:Newconsultation[];
 
   ngOnInit(): void {
 
@@ -27,7 +30,10 @@ export class DaterangeComponent implements OnInit {
       from1: ["", Validators.required],
       to: ["", Validators.required]
     })
-
+    this.form1 = this.fb.group({
+      from1: ["", Validators.required],
+      to: ["", Validators.required]
+    })
 
   }
 
@@ -46,6 +52,12 @@ export class DaterangeComponent implements OnInit {
     })
   }
 
-
+  getmyConsultation(): void {
+    this.getconsult=[]
+    this.daterangeservice.getmyConsultations(this.form1).subscribe(data=>{
+      this.getconsult=data.data;
+      console.log(this.getconsult)
+    })
+  }
 
 }

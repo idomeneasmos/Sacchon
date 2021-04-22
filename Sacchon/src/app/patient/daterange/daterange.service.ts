@@ -1,3 +1,4 @@
+import { Newconsultation } from './../../doctor/add-consultation/newconsultation/newconsultation';
 import { ApiResult } from './../../api-result';
 import { FormGroup } from '@angular/forms';
 import { Measurement } from 'src/app/measurement';
@@ -37,6 +38,19 @@ export class DaterangeService {
       `${this.baseURL}/PatientDataCarbsIntake`
       , { params: params, headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
 
+    )
+  }
+
+  getmyConsultations(values: FormGroup): Observable<ApiResult<Newconsultation[]>> {
+    let id = sessionStorage.getItem("id");
+    let params = new HttpParams()
+      .set("patient_Id", id)
+      .set("from1", values.get('from1').value)
+      .set("to", values.get('to').value);
+    console.log(params)
+    return this.http.get<ApiResult<Newconsultation[]>>(
+      `${this.baseURL}/consultation`
+      , { params: params, headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   }
 }

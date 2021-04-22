@@ -23,7 +23,6 @@ export class ListofmypatientsComponent implements OnInit {
     let id=sessionStorage.getItem("id");
     this.ListofmyPatients.getlistofpatients(id).subscribe(data =>{
       this.Listofmypatients = data.data;
-      console.log(this.Listofmypatients);
     });
   }
 
