@@ -1,21 +1,9 @@
-<button type="button" class="list-group-item list-group-item-action ">Inactive Patients</button>
+<button type="button" class="list-group-item list-group-item-action " (click)="getinactivePatients()">Inactive Patients</button>
 <div id="listsContainer1">
-    <div class="list-group">
+    
+    <div class="list-group" *ngFor="let pat of patients">
         
-        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-        <button type="button" class="list-group-item list-group-item-action" >Vestibulum at eros</button>
-        <button type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
-        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-        <button type="button" class="list-group-item list-group-item-action" >Vestibulum at eros</button>
-        <button type="button" class="list-group-item list-group-item-action ">Cras justo odio</button>
-        <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-        <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-        <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-        <button type="button" class="list-group-item list-group-item-action" >Vestibulum at eros</button>
+        <button type="button" class="list-group-item list-group-item-action" (click)="selectPatient()">{{pat.fullName}}</button>
     </div>
 </div>
 <router-outlet></router-outlet>

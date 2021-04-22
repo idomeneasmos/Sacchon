@@ -1,4 +1,3 @@
-import { from } from 'rxjs';
 import { NewconsultationService } from './newconsultation.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -30,6 +29,7 @@ export class NewconsultationComponent implements OnInit {
     console.log(newconsultation);
     this.NewconsultationService.addConsultation(newconsultation).subscribe(data => { console.log(consultation)});
 
+    this.router.navigate(['doctor']);
     alert("Consultation added");
   }
 }

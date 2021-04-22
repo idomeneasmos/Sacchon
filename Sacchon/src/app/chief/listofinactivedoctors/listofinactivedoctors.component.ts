@@ -1,3 +1,6 @@
+import { Doctor } from './../../doctor';
+import { Router } from '@angular/router';
+import { ListofinactivedoctorsService } from './listofinactivedoctors.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListofinactivedoctorsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private listofinactivedoctors:ListofinactivedoctorsService, private router:Router) { }
+  
+  doctors: Doctor[];
+  
   ngOnInit(): void {
+  }
+
+  getDoctor(){
+    this.doctors=[];
+    this.listofinactivedoctors.getinactivedoctors().subscribe(data=>{
+      this.doctors=data.data;
+      console.log(this.doctors)
+    })
+
+  }
+
+  selectDoctor(): void {
+    this.router.navigate(['doctorProfile']);
   }
 
 }

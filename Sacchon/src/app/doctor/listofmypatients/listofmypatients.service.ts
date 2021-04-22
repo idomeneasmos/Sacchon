@@ -18,7 +18,7 @@ export class ListofmypatientsService {
     .set("doctor_Id", id);
     console.log(params);
     return this.http.get<ApiResult<Patient[]>>(
-      `${this.baseUrl}/PatientByDoctorResource`,
+      `${this.baseUrl}/PatientDoctorResource`,
       { params: params, headers: new HttpHeaders({ 'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")) }) }
     )
   };
