@@ -22,7 +22,7 @@ export class NewconsultationComponent implements OnInit {
       description: consultation,
       date: new Date(),
       doctorId: Number(sessionStorage.getItem('id')),
-      patientId: Number(sessionStorage.getItem("patient_id_of_this_doctor")) //ayto einai to id pou fernei o idomeneas
+      patientId: Number(sessionStorage.getItem("patient_id_of_this_doctor"))
       
     }
 

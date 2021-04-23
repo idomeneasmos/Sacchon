@@ -27,7 +27,7 @@ export class ListoffreepatientsComponent implements OnInit {
   }
   selectPatient(pat:Patient): void {
     sessionStorage.setItem("patient_id_of_this_doctor", String(pat.id));
-    this.router.navigate(['add-consultation']);
+    this.router.navigate(['newconsultation']);
   }
 
 }

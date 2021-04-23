@@ -67,7 +67,7 @@ export class MyPatientComponent implements OnInit {
   lineChartColors2: Color[] = [
     {
       borderColor: '#18FFFF',
-      backgroundColor : '#FFAB40',
+      backgroundColor : '#6ab7ff',
     },
   ];
 
